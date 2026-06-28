@@ -1,183 +1,244 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Scentify - Our Story</title>
-    <link rel="stylesheet" href="../CSS/ourstory.css">
-    
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Our Story – Learn about Scentify's mission, values, team, and milestones in luxury attar perfumery.">
+  <title>Our Story – Scentify</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="../CSS/style.css">
 </head>
+
 <body>
 
-    <header class="main-header">
-        <div class="header-content">
-            
-            <div class="search-bar-wrapper">
-                <div class="search-bar">
-                    <i class="fas fa-search"></i>
-                    <input type="text" placeholder="Search">
-                    <i class="fas fa-microphone"></i> 
-                </div>
-            </div>
-            
-            <div class="logo">
-                <img src="../../Images/logopic.png" alt="Scentify Logo"> 
-                <span class="logo-fragrances">FRAGRANCES</span>
-            </div>
-            
-           <div class="user-actions">
-                <a href="loginpage.html" class="header-action-text"><i class="fas fa-user"></i> ACCOUNT</a>
-                <a href="checkoutpage.html" class="header-action-text"><i class="fas fa-shopping-cart"></i> CART</a> 
-            </div>
+  <!-- ===================== HEADER ===================== -->
+  <header id="fixed-header" class="fixed-header">
+    <div class="announcement-bar">
+      <span>🎁 Free Delivery on Orders Above Rs.2,500 &nbsp;|&nbsp; 7 Days Easy Return Policy</span>
+      <div class="social-icons-desktop">
+        <a href="https://www.facebook.com/" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.instagram.com/" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.youtube.com/" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+      </div>
+    </div>
+    <div class="header-main">
+      <div class="header-container">
+        <div class="search-bar-desktop">
+          <div class="search-input-wrapper">
+            <label for="desktop-search" class="sr-only">Search products</label>
+            <input id="desktop-search" type="text" placeholder="Search products...">
+            <i class="fas fa-search" aria-hidden="true"></i>
+          </div>
         </div>
-        <div class="header-separator"></div>
-    </header>
-    <main class="story-wrapper">
-        
-        <div class="story-header">
-            <h1 class="story-title">
-                <i class="fas fa-star gold"></i> Our Story <i class="fas fa-star gold"></i>
-            </h1>
-            
-            <h2 class="story-subtitle">Company story, mission & Values</h2>
+        <div class="logo-wrapper">
+          <a href="index.html" class="logo-text" aria-label="Scentify Home">Scent<span>ify</span></a>
+        </div>
+        <div class="header-icons">
+          <button class="search-mobile-icon" aria-label="Open Search"><i class="fas fa-search"></i></button>
+          <a href="loginpage.html" class="icon-link" aria-label="My Account">
+            <i class="fas fa-user"></i><span class="icon-label">Account</span>
+          </a>
+          <a href="checkoutpage.html" class="icon-link cart-icon-wrapper" aria-label="Shopping Cart">
+            <i class="fas fa-shopping-cart"></i><span class="icon-label">Cart</span>
+            <span class="cart-count" aria-live="polite">0</span>
+          </a>
+          <button class="menu-mobile-icon" aria-label="Open Menu"><i class="fas fa-bars"></i></button>
+        </div>
+      </div>
+    </div>
+    <nav class="nav-links-desktop" aria-label="Main Navigation">
+      <div class="nav-container">
+        <ul class="nav-list">
+          <li><a href="index.html">HOME</a></li>
+          <li><a href="productlisting.html" class="dropdown-link">SHOP <i class="fas fa-chevron-down"></i></a></li>
+          <li><a href="#">BEST SELLERS</a></li>
+          <li><a href="#">DEALS</a></li>
+          <li><a href="#">TESTERS</a></li>
+          <li><a href="#">OUR OUTLETS</a></li>
+          <li><a href="#">BLOGS</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <!-- ===================== MAIN ===================== -->
+  <main>
+
+    <!-- BREADCRUMB -->
+    <div class="breadcrumb-bar">
+      <div class="breadcrumb-inner">
+        <a href="index.html">Home</a>
+        <i class="fas fa-chevron-right" aria-hidden="true"></i>
+        <span>Our Story</span>
+      </div>
+    </div>
+
+    <!-- PAGE HERO -->
+    <section class="story-hero" aria-label="Our Story Hero">
+      <p class="hero-eyebrow">Who We Are</p>
+      <h1>The Story Behind <span>Scentify</span></h1>
+      <p class="story-hero-sub">Blending the timeless art of Middle Eastern perfumery with modern craftsmanship — making luxury accessible to everyone.</p>
+    </section>
+
+    <!-- MISSION / VALUES CARDS -->
+    <section class="story-cards-section" aria-labelledby="story-cards-heading">
+      <h2 id="story-cards-heading" class="sr-only">Company Story, Mission and Values</h2>
+      <div class="story-cards-grid">
+
+        <div class="story-card">
+          <div class="story-card-icon"><i class="fas fa-book-open" aria-hidden="true"></i></div>
+          <h3>Company Story</h3>
+          <p>Scentify Fragrances was created to blend the timeless art of Middle Eastern perfumery with modern craftsmanship. Our goal is simple: to make exquisite, high-quality fragrances accessible and affordable for everyone.</p>
         </div>
 
-        <section class="story-intro-section">
-            
-            <div class="story-card">
-                <h3>Company Story</h3>
-                <p>Scentify Fragrances was created to blend the timeless art of Middle Eastern perfumery with modern craftmanship. Our goal is simple: to make exquisite, high-quality fragrances accessible and affordable for everyone.</p>
-            </div>
-            
-            <div class="story-card">
-                <h3>Our Mission</h3>
-                <p>Our mission is to empower every customer to express their unique identity and confidence through a lasting scent. We meticulously source the finest ingredients globally to craft a truly luxurious fragrance experience.</p>
-            </div>
-            
-            <div class="story-card">
-                <h3>Our Values</h3>
-                <ol class="value-list">
-                    <li>1. Quality</li>
-                    <li>2. Integrity</li>
-                    <li>3. Innovation</li>
-                    <li>4. Customer</li>
-                    <li>Focus</li>
-                </ol>
-            </div>
-        </section>
-        
-        <section class="team-milestones-section">
-            
-            <div class="team-section">
-                <h2>Our Team & Dedication</h2>
-                
-                <div class="team-images-row">
-                    <div class="team-image-box">
-                        <img src="../../Images/teamwork.jpg" alt="Team in Lab"> 
-                        <p>Crafting the magic of Attar: Our team pours passion, precision, and craftsmanship into every single bottle.</p>
-                    </div>
-
-                    <div class="team-image-box">
-                        <img src="../../Images/testlab.jpg" alt="Quality Check">
-                        <p>Excellence. Every Scentify bottle undergoes rigorous quality inspection before reaching you.</p>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="milestones-section">
-                <h2>Achivements & Milestones</h2>
-                
-                <div class="milestone-grid">
-                    
-                    <div class="milestone-box black-box">
-                        <span class="milestone-title">Costmers</span>
-                        <span class="milestone-value">50,000+</span>
-                    </div>
-
-                    <div class="milestone-box black-box">
-                        <span class="milestone-title">Product range</span>
-                        <span class="milestone-value">150+</span>
-                    </div>
-
-                    <div class="milestone-box black-box">
-                        <div class="rating">
-                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                        </div>
-                        <span class="milestone-value small">95% Product</span>
-                        <span class="milestone-value small">4.5 Stars of Above</span>
-                    </div>
-
-                    <div class="milestone-box black-box">
-                        <i class="fas fa-trophy trophy-icon"></i>
-                        <span class="milestone-value small">Best New Perfume</span>
-                        <span class="milestone-value small">Brand 2024</span>
-                    </div>
-                    
-                </div>
-            </div>
-            
-        </section>
-        
-    </main>
-    
-    <footer class="main-footer">
-        
-        <div class="footer-container">
-            
-            <div class="footer-col brand-col">
-                 <div class="footer-logo">Scentify</div>
-                 <div class="footer-fragrances">FRAGRANCES</div>
-            </div>
-            
-            <div class="footer-col">
-                <h4>Quick Links</h4>
-                <ul>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">FAQ's</a></li>
-                    <li><a href="#">Returns</a></li>
-                    <li><a href="#">Terms & Conditions</a></li>
-                    <li><a href="#">Privacy Policy</a></li>
-                </ul>
-            </div>
-            
-            <div class="footer-col">
-                <h4>Contact Info</h4>
-                <p><i class="fas fa-envelope"></i> Support@Scentify.Com</p>
-                <p><i class="fas fa-phone"></i> +92 300 1234567</p>
-                <p><i class="fas fa-map-marker-alt"></i> Islamabad, Pakistan</p>
-                
-                <h4 class="follow-heading">Follow Us</h4>
-                <div class="social-links">
-                    <a href="#"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
-                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                </div>
-            </div>
-
-            <div class="footer-col">
-                <h4>Customer Services</h4>
-                <ul>
-                    <li><a href="#">About Us</a></li>
-                    <li><a href="#">Scentify Media Page</a></li>
-                    <li><a href="#">Terms Of Service</a></li>
-                    <li><a href="#">Refund And Exchange Policy</a></li>
-                </ul>
-            </div>
-            
-            <div class="footer-col address-col">
-                <h4>Address</h4>
-                <p>Shop G-179, Musk Al Mahal, Opp Rex Centre, Next To Meezan Bank, Panorama Centre, Saddar, Karachi.</p>
-            </div>
-            
+        <div class="story-card story-card-gold">
+          <div class="story-card-icon"><i class="fas fa-bullseye" aria-hidden="true"></i></div>
+          <h3>Our Mission</h3>
+          <p>To empower every customer to express their unique identity and confidence through a lasting scent. We meticulously source the finest ingredients globally to craft a truly luxurious fragrance experience.</p>
         </div>
-        
-        <div class="footer-bottom">
-            <p>&copy; 2025 Scentify</p>
+
+        <div class="story-card">
+          <div class="story-card-icon"><i class="fas fa-gem" aria-hidden="true"></i></div>
+          <h3>Our Values</h3>
+          <ul class="values-list">
+            <li><i class="fas fa-check" aria-hidden="true"></i> Quality</li>
+            <li><i class="fas fa-check" aria-hidden="true"></i> Integrity</li>
+            <li><i class="fas fa-check" aria-hidden="true"></i> Innovation</li>
+            <li><i class="fas fa-check" aria-hidden="true"></i> Customer Focus</li>
+          </ul>
         </div>
-    </footer>
-    <script src="../JS/ourstory.js"></script>
+
+      </div>
+    </section>
+
+    <!-- MILESTONES -->
+    <section class="milestones-section" aria-labelledby="milestones-heading">
+      <div class="milestones-inner">
+        <p class="section-eyebrow">By The Numbers</p>
+        <h2 id="milestones-heading" class="section-heading">Achievements &amp; Milestones</h2>
+
+        <div class="milestones-grid">
+
+          <div class="milestone-box">
+            <i class="fas fa-users milestone-icon" aria-hidden="true"></i>
+            <span class="milestone-value">50,000+</span>
+            <span class="milestone-label">Happy Customers</span>
+          </div>
+
+          <div class="milestone-box">
+            <i class="fas fa-spray-can milestone-icon" aria-hidden="true"></i>
+            <span class="milestone-value">150+</span>
+            <span class="milestone-label">Product Range</span>
+          </div>
+
+          <div class="milestone-box">
+            <i class="fas fa-star milestone-icon" aria-hidden="true"></i>
+            <span class="milestone-value">4.5 ★</span>
+            <span class="milestone-label">95% Products Rated 4.5+</span>
+          </div>
+
+          <div class="milestone-box">
+            <i class="fas fa-trophy milestone-icon" aria-hidden="true"></i>
+            <span class="milestone-value">2024</span>
+            <span class="milestone-label">Best New Perfume Brand</span>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- TEAM SECTION -->
+    <section class="team-section" aria-labelledby="team-heading">
+      <div class="team-inner">
+        <p class="section-eyebrow">The People</p>
+        <h2 id="team-heading" class="section-heading">Our Team &amp; Dedication</h2>
+
+        <div class="team-grid">
+          <div class="team-card">
+            <img src="../Images/teamwork.jpg" alt="Scentify team crafting attar in the lab">
+            <div class="team-card-text">
+              <h3>Crafting the Magic</h3>
+              <p>Our team pours passion, precision, and craftsmanship into every single bottle of attar we produce.</p>
+            </div>
+          </div>
+          <div class="team-card">
+            <img src="../Images/testlab.jpg" alt="Quality inspection at Scentify lab">
+            <div class="team-card-text">
+              <h3>Excellence in Every Bottle</h3>
+              <p>Every Scentify bottle undergoes rigorous quality inspection before it reaches your hands.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="story-cta" aria-label="Call to action">
+      <h2>Ready to Find Your Signature Scent?</h2>
+      <p>Explore our full collection or take the quiz to get a personalised recommendation.</p>
+      <div class="story-cta-btns">
+        <a href="productlisting.html" class="btn-primary">Shop Now</a>
+        <a href="quiz.html" class="btn-secondary">Take The Quiz</a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="main-footer" aria-label="Site Footer">
+    <div class="footer-content">
+      <div class="footer-brand">
+        <a href="index.html" class="logo-text footer-logo-text" aria-label="Scentify Home">Scent<span>ify</span></a>
+        <p class="footer-tagline">Wear the Unseen.</p>
+        <div class="social-links">
+          <a href="https://www.facebook.com/" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://www.instagram.com/" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="https://twitter.com/" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+          <a href="https://www.linkedin.com/" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+      </div>
+      <div class="footer-section">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="ourstory.html">About Us</a></li>
+          <li><a href="#">FAQ's</a></li>
+          <li><a href="#">Returns</a></li>
+          <li><a href="#">Terms &amp; Conditions</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>Customer Services</h3>
+        <ul>
+          <li><a href="#">Scentify Media Page</a></li>
+          <li><a href="#">Terms Of Service</a></li>
+          <li><a href="#">Refund &amp; Exchange Policy</a></li>
+          <li><a href="#">Track My Order</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>Contact Info</h3>
+        <ul>
+          <li><i class="fas fa-envelope"></i> Support@Scentify.com</li>
+          <li><i class="fas fa-phone"></i> +92 300 1234567</li>
+          <li><i class="fas fa-map-marker-alt"></i> Lahore, Pakistan</li>
+        </ul>
+      </div>
+      <div class="footer-section address-section">
+        <h3>Our Outlet</h3>
+        <p>Shop G-179, Musk Al Mahal, Opp Rex Centre,<br>Next To Meezan Bank, Panorama Centre,<br>Saddar, Karachi.</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Scentify. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="../JS/script.js" defer></script>
 </body>
+
 </html>

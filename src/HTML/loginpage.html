@@ -1,75 +1,219 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Scentify - Login / Create Account</title>
-    <link rel="stylesheet" href="../CSS/loginpage.css">
-    
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Login or create your Scentify account to track orders and manage your profile.">
+  <title>Login / Create Account – Scentify</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="../CSS/style.css">
 </head>
+
 <body>
 
-    <div class="login-page-container">
-        
-        <header class="main-header">
-            <div class="header-content">
-                <div class="search-bar">
-                    <i class="fas fa-search"></i>
-                    <input type="text" placeholder="Search">
-                    <i class="fas fa-microphone"></i> 
-                </div>
-                
-                <div class="logo">
-                    <img src="../../Images/logopic.png" alt="Scentify Logo">
-                    <span class="logo-fragrances"></span>
-                </div>
-                
-                <div class="user-actions">
-                    <a href="#" class="header-action-text"><i class="fas fa-user"></i> ACCOUNT</a>
-                    <a href="checkoutpage.html" class="header-action-text"><i class="fas fa-shopping-cart"></i> CART</a>
-                </div>
-            </div>
-        </header>
-
-        <main class="auth-forms-wrapper">
-            
-            <div class="auth-block login-block" id="loginBlock">
-                <h2>Login</h2>
-                <form id="loginForm" novalidate> 
-                    <input type="email" id="loginEmail" placeholder="Email" required>
-                    <input type="password" id="loginPassword" placeholder="Password" required>
-                    
-                    <button type="submit" class="blue-btn login-btn">Login</button>
-                    <div id="loginError" class="form-error-message"></div>
-                </form>
-                <p class="signup-link">Don't have an account? <a href="#" id="showSignup">Sign up</a></p>
-            </div>
-
-            <div class="auth-block create-account-block hidden-block" id="signupBlock">
-                <h2>Create Account</h2>
-                
-                <div class="social-login-buttons">
-                    <button class="social-btn google-btn">Sign up with Google</button>
-                    <button class="social-btn facebook-btn">Sign up with facebook</button>
-                </div>
-                
-                <div class="separator-or">OR</div>
-
-                <form id="signupForm" novalidate> 
-                    <input type="text" id="signupFullname" placeholder="Full Name" required>
-                    <input type="email" id="signupEmail" placeholder="Email" required>
-                    <input type="password" id="signupPassword" placeholder="Password" required>
-                    
-                    <button type="submit" class="blue-btn create-btn">Create Account</button>
-                    <div id="signupError" class="form-error-message"></div>
-                </form>
-                <p class="login-link">Already have an account? <a href="#" id="showLogin">Login</a></p>
-            </div>
-        </main>
+  <!-- ===================== HEADER ===================== -->
+  <header id="fixed-header" class="fixed-header">
+    <div class="announcement-bar">
+      <span>🎁 Free Delivery on Orders Above Rs.2,500 &nbsp;|&nbsp; 7 Days Easy Return Policy</span>
+      <div class="social-icons-desktop">
+        <a href="https://www.facebook.com/" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.instagram.com/" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.youtube.com/" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+      </div>
     </div>
-    
-    <script src="../JS/loginpage.js"></script>
+    <div class="header-main">
+      <div class="header-container">
+        <div class="search-bar-desktop">
+          <div class="search-input-wrapper">
+            <label for="desktop-search" class="sr-only">Search products</label>
+            <input id="desktop-search" type="text" placeholder="Search products...">
+            <i class="fas fa-search" aria-hidden="true"></i>
+          </div>
+        </div>
+        <div class="logo-wrapper">
+          <a href="index.html" class="logo-text" aria-label="Scentify Home">Scent<span>ify</span></a>
+        </div>
+        <div class="header-icons">
+          <button class="search-mobile-icon" aria-label="Open Search"><i class="fas fa-search"></i></button>
+          <a href="loginpage.html" class="icon-link" aria-label="My Account">
+            <i class="fas fa-user"></i><span class="icon-label">Account</span>
+          </a>
+          <a href="checkoutpage.html" class="icon-link cart-icon-wrapper" aria-label="Shopping Cart">
+            <i class="fas fa-shopping-cart"></i><span class="icon-label">Cart</span>
+            <span class="cart-count" aria-live="polite">0</span>
+          </a>
+          <button class="menu-mobile-icon" aria-label="Open Menu"><i class="fas fa-bars"></i></button>
+        </div>
+      </div>
+    </div>
+    <nav class="nav-links-desktop" aria-label="Main Navigation">
+      <div class="nav-container">
+        <ul class="nav-list">
+          <li><a href="index.html">HOME</a></li>
+          <li><a href="productlisting.html" class="dropdown-link">SHOP <i class="fas fa-chevron-down"></i></a></li>
+          <li><a href="#">BEST SELLERS</a></li>
+          <li><a href="#">DEALS</a></li>
+          <li><a href="#">TESTERS</a></li>
+          <li><a href="#">OUR OUTLETS</a></li>
+          <li><a href="#">BLOGS</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
 
+  <!-- ===================== MAIN ===================== -->
+  <main class="auth-page-wrapper">
+
+    <div class="auth-card" id="loginBlock">
+      <div class="auth-brand">
+        <a href="index.html" class="logo-text auth-logo">Scent<span>ify</span></a>
+        <p>Welcome back. Sign in to your account.</p>
+      </div>
+
+      <form id="loginForm" novalidate>
+        <div class="auth-form-group">
+          <label for="loginEmail">Email</label>
+          <div class="auth-input-wrapper">
+            <i class="fas fa-envelope" aria-hidden="true"></i>
+            <input type="email" id="loginEmail" placeholder="you@example.com" required>
+          </div>
+        </div>
+        <div class="auth-form-group">
+          <label for="loginPassword">Password</label>
+          <div class="auth-input-wrapper">
+            <i class="fas fa-lock" aria-hidden="true"></i>
+            <input type="password" id="loginPassword" placeholder="••••••••" required>
+          </div>
+        </div>
+        <div class="auth-forgot">
+          <a href="#">Forgot password?</a>
+        </div>
+        <div id="loginError" class="auth-error" role="alert"></div>
+        <button type="submit" class="auth-btn">Sign In</button>
+      </form>
+
+      <div class="auth-divider"><span>OR</span></div>
+
+      <div class="auth-social">
+        <button class="social-btn google-btn">
+          <i class="fab fa-google" aria-hidden="true"></i> Continue with Google
+        </button>
+        <button class="social-btn facebook-btn">
+          <i class="fab fa-facebook-f" aria-hidden="true"></i> Continue with Facebook
+        </button>
+      </div>
+
+      <p class="auth-switch">
+        Don't have an account? <a href="#" id="showSignup">Create one</a>
+      </p>
+    </div>
+
+    <div class="auth-card hidden-block" id="signupBlock">
+      <div class="auth-brand">
+        <a href="index.html" class="logo-text auth-logo">Scent<span>ify</span></a>
+        <p>Create your account and start exploring.</p>
+      </div>
+
+      <div class="auth-social">
+        <button class="social-btn google-btn">
+          <i class="fab fa-google" aria-hidden="true"></i> Sign up with Google
+        </button>
+        <button class="social-btn facebook-btn">
+          <i class="fab fa-facebook-f" aria-hidden="true"></i> Sign up with Facebook
+        </button>
+      </div>
+
+      <div class="auth-divider"><span>OR</span></div>
+
+      <form id="signupForm" novalidate>
+        <div class="auth-form-group">
+          <label for="signupFullname">Full Name</label>
+          <div class="auth-input-wrapper">
+            <i class="fas fa-user" aria-hidden="true"></i>
+            <input type="text" id="signupFullname" placeholder="Muhammad Ali" required>
+          </div>
+        </div>
+        <div class="auth-form-group">
+          <label for="signupEmail">Email</label>
+          <div class="auth-input-wrapper">
+            <i class="fas fa-envelope" aria-hidden="true"></i>
+            <input type="email" id="signupEmail" placeholder="you@example.com" required>
+          </div>
+        </div>
+        <div class="auth-form-group">
+          <label for="signupPassword">Password</label>
+          <div class="auth-input-wrapper">
+            <i class="fas fa-lock" aria-hidden="true"></i>
+            <input type="password" id="signupPassword" placeholder="Min. 8 characters" required>
+          </div>
+        </div>
+        <div id="signupError" class="auth-error" role="alert"></div>
+        <button type="submit" class="auth-btn">Create Account</button>
+      </form>
+
+      <p class="auth-switch">
+        Already have an account? <a href="#" id="showLogin">Sign in</a>
+      </p>
+    </div>
+
+  </main>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="main-footer" aria-label="Site Footer">
+    <div class="footer-content">
+      <div class="footer-brand">
+        <a href="index.html" class="logo-text footer-logo-text" aria-label="Scentify Home">Scent<span>ify</span></a>
+        <p class="footer-tagline">Wear the Unseen.</p>
+        <div class="social-links">
+          <a href="https://www.facebook.com/" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://www.instagram.com/" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="https://twitter.com/" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+          <a href="https://www.linkedin.com/" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+      </div>
+      <div class="footer-section">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="ourstory.html">About Us</a></li>
+          <li><a href="#">FAQ's</a></li>
+          <li><a href="#">Returns</a></li>
+          <li><a href="#">Terms &amp; Conditions</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>Customer Services</h3>
+        <ul>
+          <li><a href="#">Scentify Media Page</a></li>
+          <li><a href="#">Terms Of Service</a></li>
+          <li><a href="#">Refund &amp; Exchange Policy</a></li>
+          <li><a href="#">Track My Order</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>Contact Info</h3>
+        <ul>
+          <li><i class="fas fa-envelope"></i> Support@Scentify.com</li>
+          <li><i class="fas fa-phone"></i> +92 300 1234567</li>
+          <li><i class="fas fa-map-marker-alt"></i> Lahore, Pakistan</li>
+        </ul>
+      </div>
+      <div class="footer-section address-section">
+        <h3>Our Outlet</h3>
+        <p>Shop G-179, Musk Al Mahal, Opp Rex Centre,<br>Next To Meezan Bank, Panorama Centre,<br>Saddar, Karachi.</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Scentify. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="../JS/script.js" defer></script>
+  <script src="../JS/loginpage.js" defer></script>
 </body>
+
 </html>

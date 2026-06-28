@@ -2,231 +2,281 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Scentify - Luxury Perfumes & Attars</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="../CSS/style.css">
-    <script src="../JS/script.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Scentify – Premium Attars & Luxury Perfumes from Lahore, Pakistan. Discover your signature scent.">
+  <title>Scentify – Luxury Perfumes & Attars</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="../CSS/style.css">
 </head>
 
 <body>
 
-    <header id="fixed-header" class="fixed-header">
-        <div class="announcement-bar">
-            7 Days Easy Return & Exchange Policy
-            <div class="social-icons-desktop">
-                <a href="https://www.facebook.com/" aria-label="Facebook" class="transition"><i class="fab fa-facebook-f"></i></a>
-                <a href="https://www.instagram.com/" aria-label="Instagram" class="transition"><i class="fab fa-instagram"></i></a>
-                <a href="https://www.youtube.com/" aria-label="YouTube" class="transition"><i class="fab fa-youtube"></i></a>
-            </div>
-        </div>
+  <!-- ===================== HEADER ===================== -->
+  <header id="fixed-header" class="fixed-header">
 
-        <div class="header-main">
-            <div class="header-container">
-                <div class="search-bar-desktop">
-                    <div class="search-input-wrapper">
-                        <input type="text" placeholder="Search products...">
-                        <i class="fas fa-search"></i>
-                    </div>
-                </div>
-
-                <div class="logo-wrapper">
-                    <a href="#"></a>
-                </div>
-
-                <div class="header-icons">
-                    <button class="search-mobile-icon" aria-label="Open Search">
-                        <i class="fas fa-search"></i>
-                    </button>
-
-                    <a href="#" class="icon-link">
-                        <i class="fas fa-user"></i>
-                        <span class="icon-label">Account</span>
-                    </a>
-
-                    <a href="#" class="icon-link cart-icon-wrapper">
-                        <i class="fas fa-shopping-cart"></i>
-                        <span class="icon-label">Cart</span>
-                    </a>
-
-                    <button class="menu-mobile-icon" aria-label="Open Menu">
-                        <i class="fas fa-bars"></i>
-                    </button>
-                </div>
-            </div>
-        </div>
-
-        <nav class="nav-links-desktop">
-            <div class="nav-container">
-                <ul class="nav-list">
-                    <li><a href="#" onclick="showPage('home-page'); return false;">HOME</a></li>
-                    <li><a href="#" class="dropdown-link">SHOP <i class="fas fa-chevron-down"></i></a></li>
-                    <li><a href="#">BEST SELLERS</a></li>
-                    <li><a href="#">DEALS</a></li>
-                    <li><a href="#">TESTERS</a></li>
-                    <li><a href="#">OUR OUTLETS</a></li>
-                    <li><a href="#">BLOGS</a></li>
-                </ul>
-            </div>
-        </nav>
-    </header>
-
-
-    <div id="main-content-area" class="main-content-area">
-
-        <section id="home-page" class="content-page active">
-            <div class="hero-section">
-                <h1>Welcome to Scentify - Discover Your Signature Scent</h1>
-                <p>The essence of luxury captured in a bottle. Explore our latest collection.</p>
-
-                <a href="#">
-                    <img src="../../Images/HP image.png" alt="Main Product Placeholder" class="hero-placeholder-image">
-                </a>
-            </div>
-        </section>
-
+    <div class="announcement-bar">
+      <span>🎁 Free Delivery on Orders Above Rs.2,500 &nbsp;|&nbsp; 7 Days Easy Return Policy</span>
+      <div class="social-icons-desktop">
+        <a href="https://www.facebook.com/" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.instagram.com/" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.youtube.com/" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+      </div>
     </div>
 
-    <div class="suggestion-grid">
-        <a href="Sultan_Ameer_Detail_Page.html" class="product-card">
-        <div class="suggestion-grid">
-                
-                <!-- Product 1: Sultan E Ameer (Clickable to Detail Page) -->
-                <a href="#" class="product-card" onclick="showPage('product-detail-page'); return false;">
-                    <img src="../../Images/Sultan A1.webp" alt="Sultan E Ameer">
-                    <div class="card-details">
-                        <h4>Sultan E Ameer | Attar Oil</h4>
-                        <p>Addition To Arabia</p>
-                        <p class="price">Rs.2,199.00</p>
-                    </div>
-                </a>
+    <div class="header-main">
+      <div class="header-container">
 
-                <!-- Product 2: Black & Silver Platinum (Non-clickable) -->
-                <div class="product-card">
-                    <img src="../../Images/Black & Silver Platinum.webp" alt="Black & Silver Platinum">
-                    <div class="card-details">
-                        <h4>Black&Silver Platinum | Attar Oil</h4>
-                        <p>Long lasting fragrance</p>
-                        <p class="price">Rs.1,499.00</p>
-                    </div>
-                </div>
-                
-                <!-- Product 3: Black & Silver Oud (Non-clickable) -->
-                <div class="product-card">
-                    <img src="../../Images/Black & Silver Oud.webp" alt="Black & Silver Oud">
-                    <div class="card-details">
-                        <h4>Black & Silver Oud | Attar Oil</h4>
-                        <p>King of the series</p>
-                        <p class="price">Rs.1,899.00</p>
-                    </div>
-                </div>
+        <!-- Desktop Search -->
+        <div class="search-bar-desktop">
+          <div class="search-input-wrapper">
+            <label for="desktop-search" class="sr-only">Search products</label>
+            <input id="desktop-search" type="text" placeholder="Search products...">
+            <i class="fas fa-search" aria-hidden="true"></i>
+          </div>
+        </div>
 
-                <!-- Product 4: White Oudh (Non-clickable) -->
-                <div class="product-card">
-                    <img src="../../Images/White Oud.webp" alt="White Oudh">
-                    <div class="card-details">
-                        <h4>White Oudh | Concentrated Oils</h4>
-                        <p>Dense heavy fragrance</p>
-                        <p class="price">Rs.999.00</p>
-                    </div>
-                </div>
-    <div class="suggestion-grid">
+        <!-- Logo -->
+        <div class="logo-wrapper">
+          <a href="index.html" aria-label="Scentify Home" class="logo-text">
+            Scent<span>ify</span>
+          </a>
+        </div>
+
+        <!-- Header Icons -->
+        <div class="header-icons">
+          <button class="search-mobile-icon" aria-label="Open Search">
+            <i class="fas fa-search" aria-hidden="true"></i>
+          </button>
+          <a href="#" class="icon-link" aria-label="My Account">
+            <i class="fas fa-user" aria-hidden="true"></i>
+            <span class="icon-label">Account</span>
+          </a>
+          <a href="#" class="icon-link cart-icon-wrapper" aria-label="Shopping Cart, 0 items">
+            <i class="fas fa-shopping-cart" aria-hidden="true"></i>
+            <span class="icon-label">Cart</span>
+            <span class="cart-count" aria-live="polite">0</span>
+          </a>
+          <button class="menu-mobile-icon" aria-label="Open Menu">
+            <i class="fas fa-bars" aria-hidden="true"></i>
+          </button>
+        </div>
+
+      </div>
+    </div>
+
+    <nav class="nav-links-desktop" aria-label="Main Navigation">
+      <div class="nav-container">
+        <ul class="nav-list">
+          <li><a href="index.html">HOME</a></li>
+          <li><a href="#" class="dropdown-link">SHOP <i class="fas fa-chevron-down" aria-hidden="true"></i></a></li>
+          <li><a href="#">BEST SELLERS</a></li>
+          <li><a href="#">DEALS</a></li>
+          <li><a href="#">TESTERS</a></li>
+          <li><a href="#">OUR OUTLETS</a></li>
+          <li><a href="#">BLOGS</a></li>
+        </ul>
+      </div>
+    </nav>
+
+  </header>
+
+  <!-- ===================== MAIN ===================== -->
+  <main id="main-content">
+
+    <!-- HERO SECTION -->
+    <section class="hero-section" aria-label="Hero Banner">
+      <div class="hero-content">
+        <p class="hero-eyebrow">New Collection — 2025</p>
+        <h1>Discover Your<br><span>Signature Scent</span></h1>
+        <p class="hero-subtitle">Premium Attars & Luxury Perfumes crafted for those who wear their identity.</p>
+        <div class="hero-cta-group">
+          <a href="#" class="btn-primary">Shop Now</a>
+          <a href="#" class="btn-secondary">Explore Collections</a>
+        </div>
+      </div>
+      <div class="hero-image-wrapper">
+        <img src="../Images/HP image.png" alt="Scentify signature perfume collection" class="hero-placeholder-image">
+        <div class="hero-badge">
+          <span class="badge-number">12+</span>
+          <span class="badge-label">Exclusive<br>Fragrances</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- TRUST BAR -->
+    <div class="trust-bar" aria-label="Why choose Scentify">
+      <div class="trust-bar-inner">
+        <div class="trust-item">
+          <i class="fas fa-shipping-fast" aria-hidden="true"></i>
+          <span>Free Delivery above Rs.2,500</span>
+        </div>
+        <div class="trust-item">
+          <i class="fas fa-undo-alt" aria-hidden="true"></i>
+          <span>7-Day Easy Returns</span>
+        </div>
+        <div class="trust-item">
+          <i class="fas fa-leaf" aria-hidden="true"></i>
+          <span>100% Pure Attar Oils</span>
+        </div>
+        <div class="trust-item">
+          <i class="fas fa-shield-alt" aria-hidden="true"></i>
+          <span>Secure Payments</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- FEATURED PRODUCTS -->
+    <section class="products-section" aria-labelledby="products-heading">
+      <div class="section-header">
+        <p class="section-eyebrow">Our Selection</p>
+        <h2 id="products-heading" class="section-heading">Featured Fragrances</h2>
+        <p class="section-subtext">Handpicked attars and concentrated oils, each with a story to tell.</p>
+      </div>
+
+      <div class="suggestion-grid">
+
         <a href="Sultan_Ameer_Detail_Page.html" class="product-card">
-            <img src="../../Images/Sultan A1.webp" alt="Sultan E Ameer">
-            <div class="card-details">
-                <h4>Sultan E Ameer | Attar Oil</h4>
-                <p>Addition To Arabia</p>
-                <p class="price">Rs.2,199.00</p>
-            </div>
+          <div class="product-card-image-wrapper">
+            <img src="../Images/Sultan A1.webp" alt="Sultan E Ameer Attar Oil" loading="lazy">
+            <span class="product-badge">Bestseller</span>
+          </div>
+          <div class="card-details">
+            <h3>Sultan E Ameer</h3>
+            <p class="card-category">Attar Oil · Addition To Arabia</p>
+            <p class="price">Rs.2,199</p>
+            <button class="card-cart-btn" aria-label="Add Sultan E Ameer to cart">
+              <i class="fas fa-shopping-cart" aria-hidden="true"></i> Add to Cart
+            </button>
+          </div>
         </a>
 
-        <div class="product-card">
-            <img src="../../Images/Black & Silver Platinum.webp" alt="Black & Silver Platinum">
-            <div class="card-details">
-                <h4>Black&Silver Platinum | Attar Oil</h4>
-                <p>Long lasting fragrance</p>
-                <p class="price">Rs.1,499.00</p>
-            </div>
-        </div>
-
-        <div class="product-card">
-            <img src="../../Images/Black & Silver Oud.webp" alt="Black & Silver Oud">
-            <div class="card-details">
-                <h4>Black & Silver Oud | Attar Oil</h4>
-                <p>King of the series</p>
-                <p class="price">Rs.1,899.00</p>
-            </div>
-        </div>
-
-        <div class="product-card">
-            <img src="../../Images/White Oud.webp" alt="White Oudh">
-            <div class="card-details">
-                <h4>White Oudh | Concentrated Oils</h4>
-                <p>Dense heavy fragrance</p>
-                <p class="price">Rs.999.00</p>
-            </div>
-        </div>
-    </div>
-
-    <div class="quiz-button-container">
-        <a href="quiz.html" class="quiz-button">
-            Take The Quiz
+        <a href="#" class="product-card">
+          <div class="product-card-image-wrapper">
+            <img src="../Images/Black & Silver Platinum.webp" alt="Black and Silver Platinum Attar Oil" loading="lazy">
+          </div>
+          <div class="card-details">
+            <h3>Black &amp; Silver Platinum</h3>
+            <p class="card-category">Attar Oil · Long lasting fragrance</p>
+            <p class="price">Rs.1,499</p>
+            <button class="card-cart-btn" aria-label="Add Black and Silver Platinum to cart">
+              <i class="fas fa-shopping-cart" aria-hidden="true"></i> Add to Cart
+            </button>
+          </div>
         </a>
+
+        <a href="#" class="product-card">
+          <div class="product-card-image-wrapper">
+            <img src="../Images/Black & Silver Oud.webp" alt="Black and Silver Oud Attar Oil" loading="lazy">
+            <span class="product-badge new-badge">New</span>
+          </div>
+          <div class="card-details">
+            <h3>Black &amp; Silver Oud</h3>
+            <p class="card-category">Attar Oil · King of the series</p>
+            <p class="price">Rs.1,899</p>
+            <button class="card-cart-btn" aria-label="Add Black and Silver Oud to cart">
+              <i class="fas fa-shopping-cart" aria-hidden="true"></i> Add to Cart
+            </button>
+          </div>
+        </a>
+
+        <a href="#" class="product-card">
+          <div class="product-card-image-wrapper">
+            <img src="../Images/White Oud.webp" alt="White Oudh Concentrated Oil" loading="lazy">
+          </div>
+          <div class="card-details">
+            <h3>White Oudh</h3>
+            <p class="card-category">Concentrated Oil · Dense heavy fragrance</p>
+            <p class="price">Rs.999</p>
+            <button class="card-cart-btn" aria-label="Add White Oudh to cart">
+              <i class="fas fa-shopping-cart" aria-hidden="true"></i> Add to Cart
+            </button>
+          </div>
+        </a>
+
+      </div>
+
+      <div class="view-all-wrapper">
+        <a href="#" class="btn-outline">View All Products</a>
+      </div>
+    </section>
+
+    <!-- QUIZ CTA BANNER -->
+    <section class="quiz-banner" aria-label="Fragrance Finder Quiz">
+      <div class="quiz-banner-inner">
+        <div class="quiz-banner-text">
+          <h2>Not sure which scent is yours?</h2>
+          <p>Take our 2-minute Fragrance Finder quiz and we'll match you with your perfect attar.</p>
+        </div>
+        <a href="quiz.html" class="quiz-button">Take The Quiz <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="main-footer" aria-label="Site Footer">
+    <div class="footer-content">
+
+      <div class="footer-brand">
+        <a href="index.html" class="logo-text footer-logo-text" aria-label="Scentify Home">
+          Scent<span>ify</span>
+        </a>
+        <p class="footer-tagline">Wear the Unseen.</p>
+        <div class="social-links" aria-label="Follow us">
+          <a href="https://www.facebook.com/" aria-label="Facebook"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
+          <a href="https://www.instagram.com/" aria-label="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+          <a href="https://twitter.com/" aria-label="Twitter"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+          <a href="https://www.linkedin.com/" aria-label="LinkedIn"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a>
+        </div>
+      </div>
+
+      <div class="footer-section">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">FAQ's</a></li>
+          <li><a href="#">Returns</a></li>
+          <li><a href="#">Terms &amp; Conditions</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-section">
+        <h3>Customer Services</h3>
+        <ul>
+          <li><a href="#">Scentify Media Page</a></li>
+          <li><a href="#">Terms Of Service</a></li>
+          <li><a href="#">Refund &amp; Exchange Policy</a></li>
+          <li><a href="#">Track My Order</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-section">
+        <h3>Contact Info</h3>
+        <ul>
+          <li><i class="fas fa-envelope" aria-hidden="true"></i> Support@Scentify.com</li>
+          <li><i class="fas fa-phone" aria-hidden="true"></i> +92 300 1234567</li>
+          <li><i class="fas fa-map-marker-alt" aria-hidden="true"></i> Lahore, Pakistan</li>
+        </ul>
+      </div>
+
+      <div class="footer-section address-section">
+        <h3>Our Outlet</h3>
+        <p>Shop G-179, Musk Al Mahal, Opp Rex Centre,<br>Next To Meezan Bank, Panorama Centre,<br>Saddar, Karachi.</p>
+      </div>
+
     </div>
 
-    <footer class="main-footer">
-        <div class="footer-logo">
-            <img src="../../Images/Logo remove.png" alt="Scentify Fragrances Logo"
-                style="filter: brightness(2); width: 150px; height: 50px;">
-        </div>
-        <div class="footer-section">
-            <h3>Quick Links</h3>
-            <ul>
-                <li><a href="#">About</a></li>
-                <li><a href="#">FAQ's</a></li>
-                <li><a href="#">Returns</a></li>
-                <li><a href="#">Terms & Conditions</a></li>
-                <li><a href="#">Privacy Policy</a></li>
-            </ul>
-        </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Scentify. All rights reserved.</p>
+    </div>
+  </footer>
 
-        <div class="footer-section">
-            <h3>Contact Info</h3>
-            <ul>
-                <li><i class="fas fa-envelope"></i> Support@Scentify.Com</li>
-                <li><i class="fas fa-phone"></i> +92 300 1234567</li>
-                <li><i class="fas fa-map-marker-alt"></i> Lahore, Pakistan</li>
-            </ul>
-            <h3>Follow Us</h3>
-            <div class="social-links">
-                <a href="#"><i class="fab fa-facebook-f"></i></a>
-                <a href="#"><i class="fab fa-instagram"></i></a>
-                <a href="#"><i class="fab fa-twitter"></i></a>
-                <a href="#"><i class="fab fa-linkedin-in"></i></a>
-            </div>
-        </div>
-
-        <div class="footer-section">
-            <h3>Customer Services</h3>
-            <ul>
-                <li><a href="#">About Us</a></li>
-                <li><a href="#">Scentify Media Page</a></li>
-                <li><a href="#">Terms Of Service</a></li>
-                <li><a href="#">Refund And Exchange Policy</a></li>
-            </ul>
-        </div>
-
-        <div class="footer-section address-section">
-            <h3>Address</h3>
-            <p>Shop G-179, Musk Al Mahal, Opp Rex Centre, Next To Meezan Bank, Panorama Centre, Saddar, Karachi.</p>
-        </div>
-
-        <div class="footer-bottom">
-            <p>&copy; 2025 Scentify</p>
-        </div>
-    </footer>
-
+  <script src="../JS/script.js" defer></script>
 </body>
 
 </html>

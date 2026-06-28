@@ -1,162 +1,281 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Scentify Checkout</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <link rel="stylesheet" href="../CSS/checkoutpage.css"> 
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Checkout – Scentify Luxury Perfumes & Attars">
+  <title>Checkout – Scentify</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="../CSS/style.css">
 </head>
+
 <body>
 
-    <header id="mainHeader">
-        <div class="header-content">
-            
-            <div class="header-left">
-                <div class="search-box">
-                    <i class="fas fa-search"></i>
-                    <input type="text" placeholder="Search">
-                    <i class="fas fa-microphone"></i>
-                </div>
-            </div>
-
-            <div class="logo-center">
-                <img src="../../Images/logopic.png" alt="Scentify Fragrances Logo" class="scentify-logo-img">
-            </div>
-
-            <div class="header-right">
-                <a href="loginpage.html" class="header-action-text"><i class="fas fa-user"></i> ACCOUNT</a>
-                <a href="checkoutpage.html" class="header-action-text" id="cartlink">
-                    <i class="fas fa-shopping-cart"></i> CART (<span id="cartItemCount">0</span>) 
-                </a>
-            </div>
+  <!-- ===================== HEADER ===================== -->
+  <header id="fixed-header" class="fixed-header">
+    <div class="announcement-bar">
+      <span>🎁 Free Delivery on Orders Above Rs.2,500 &nbsp;|&nbsp; 7 Days Easy Return Policy</span>
+      <div class="social-icons-desktop">
+        <a href="https://www.facebook.com/" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.instagram.com/" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.youtube.com/" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+      </div>
+    </div>
+    <div class="header-main">
+      <div class="header-container">
+        <div class="search-bar-desktop">
+          <div class="search-input-wrapper">
+            <label for="desktop-search" class="sr-only">Search products</label>
+            <input id="desktop-search" type="text" placeholder="Search products...">
+            <i class="fas fa-search" aria-hidden="true"></i>
+          </div>
         </div>
-    </header>
-
-    <div class="checkout-container">
-        
-        <div class="checkout-form-section box-shadow-style">
-            <form id="checkoutForm">
-                <h2>Contact</h2>
-                <div class="form-group">
-                    <input type="email" placeholder="Email or mobile phone number" required>
-                </div>
-
-                <h2 style="margin-top: 30px;">Shipping</h2>
-                
-                <div class="form-group">
-                    <select required>
-                        <option value="">Country/Region</option>
-                        <option value="pakistan">Pakistan</option>
-                        <option value="india">India</option>
-                    </select>
-                </div>
-                <div class="form-row">
-                    <div class="form-group"><input type="text" placeholder="First Name" required></div>
-                    <div class="form-group"><input type="text" placeholder="Last Name" required></div>
-                </div>
-                <div class="form-group"><input type="text" placeholder="Address" required></div>
-                <div class="form-row">
-                    <div class="form-group"><input type="text" placeholder="City" required></div>
-                    <div class="form-group"><input type="tel" placeholder="Phone" pattern="[0-9]{10,15}" required></div>
-                </div>
-
-                <h3 style="margin-top: 30px;">Shipping Method</h3>
-                <div class="shipping-method">
-                    <label>
-                        <input type="radio" name="shipping_method" value="free"> 
-                        <span>Free Shipping</span>
-                        <span id="shippingFreeCost" class="shipping-cost-label">FREE</span>
-                    </label>
-                    <label>
-                        <input type="radio" name="shipping_method" value="standard" checked> 
-                        <span>Standard</span>
-                        <span id="shippingStandardCost" class="shipping-cost-label">Rs. 200.00</span>
-                    </label>
-                </div>
-
-                <h3 style="margin-top: 30px;">Payment</h3>
-                <div class="payment-method">
-                    <p style="font-size: 0.9em; margin-bottom: 10px;">All transactions are secure and encrypted</p>
-                    <label><input type="radio" name="payment_method" value="card" checked> Debit - Credit Card</label>
-                    <label><input type="radio" name="payment_method" value="cod"> Cash On Delivery (COD)</label>
-                </div>
-
-                <h3 style="margin-top: 30px;">Billing Address</h3>
-                <div class="billing-address">
-                    <label><input type="radio" name="billing_address" value="same" checked> Same as shipping address</label>
-                    <label><input type="radio" name="billing_address" value="different"> Use a different billing address</label>
-                </div>
-                
-                <button id="placeOrderBtn" type="submit" class="place-order-btn">Place Order</button>
-            </form>
+        <div class="logo-wrapper">
+          <a href="index.html" class="logo-text" aria-label="Scentify Home">Scent<span>ify</span></a>
         </div>
-
-        <div class="order-summary-section box-shadow-style">
-            <p id="emptyCartMessage" style="text-align: center; font-size: 1.2em; padding: 40px 0; display: none;">Your cart is currently empty. Please add items.</p> 
-
-            <table id="cartItemsTable" class="item-details-table" style="display: none;">
-                <tbody id="cartTableBody">
-                    </tbody>
-            </table>
-            
-            <div class="summary-totals">
-                <p>Subtotal: <span id="subtotalDisplay">Rs. 0.00</span></p>
-                <p>Shipping: <span id="shippingDisplay">Rs. 0.00</span></p>
-                <hr>
-                <h4>Total: <span id="orderTotalDisplay" class="order-total-amount">Rs. 0.00</span></h4>
-            </div>
+        <div class="header-icons">
+          <button class="search-mobile-icon" aria-label="Open Search"><i class="fas fa-search"></i></button>
+          <a href="loginpage.html" class="icon-link" aria-label="My Account">
+            <i class="fas fa-user"></i><span class="icon-label">Account</span>
+          </a>
+          <a href="checkoutpage.html" class="icon-link cart-icon-wrapper" aria-label="Shopping Cart">
+            <i class="fas fa-shopping-cart"></i><span class="icon-label">Cart</span>
+            <span class="cart-count" id="cartItemCount" aria-live="polite">0</span>
+          </a>
+          <button class="menu-mobile-icon" aria-label="Open Menu"><i class="fas fa-bars"></i></button>
         </div>
+      </div>
+    </div>
+    <nav class="nav-links-desktop" aria-label="Main Navigation">
+      <div class="nav-container">
+        <ul class="nav-list">
+          <li><a href="index.html">HOME</a></li>
+          <li><a href="productlisting.html" class="dropdown-link">SHOP <i class="fas fa-chevron-down"></i></a></li>
+          <li><a href="#">BEST SELLERS</a></li>
+          <li><a href="#">DEALS</a></li>
+          <li><a href="#">TESTERS</a></li>
+          <li><a href="#">OUR OUTLETS</a></li>
+          <li><a href="#">BLOGS</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <!-- ===================== MAIN ===================== -->
+  <main>
+
+    <!-- Breadcrumb -->
+    <div class="breadcrumb-bar">
+      <div class="breadcrumb-inner">
+        <a href="index.html">Home</a>
+        <i class="fas fa-chevron-right" aria-hidden="true"></i>
+        <a href="productlisting.html">Shop</a>
+        <i class="fas fa-chevron-right" aria-hidden="true"></i>
+        <span>Checkout</span>
+      </div>
     </div>
 
-    <footer class="main-footer">
-        <div class="footer-container">
-            <div class="footer-col">
-                <h4>QUICK LINKS</h4>
-                <ul>
-                    <li><a href="ourstory.html">About</a></li>
-                    <li><a href="#">FAQ's</a></li>
-                    <li><a href="#">Returns</a></li>
-                    <li><a href="#">Terms & Conditions</a></li>
-                    <li><a href="#">Privacy Policy</a></li>
-                </ul>
-            </div>
-            <div class="footer-col">
-                <h4>CONTACT INFO</h4>
-                <p><i class="fas fa-envelope"></i> Support@Scentify.Com</p>
-                <p><i class="fas fa-phone"></i> +92 300 1234567</p>
-                <p><i class="fas fa-map-marker-alt"></i> Lahore, Pakistan</p>
-            </div>
-            <div class="footer-col">
-                <h4>CUSTOMER SERVICES</h4>
-                <ul>
-                    <li><a href="ourstory.html">About Us</a></li>
-                    <li><a href="#">Scentify Media Page</a></li>
-                    <li><a href="#">Terms Of Service</a></li>
-                    <li><a href="#">Refund And Exchange Policy</a></li>
-                </ul>
-            </div>
-            <div class="footer-col address-col">
-                <h4>ADDRESS</h4>
-                <p>Shop G-179, Musk Al Mahal, Opp Rex Centre, Next To Meezan Bank, Panorama Centre, Saddar, Karachi.</p>
-            </div>
-        </div>
-        
-        <div class="footer-follow-us">
-            <h4>FOLLOW US</h4>
-            <div class="social-links">
-                <a href="#"><i class="fab fa-facebook-f"></i></a>
-                <a href="#"><i class="fab fa-instagram"></i></a>
-                <a href="#"><i class="fab fa-twitter"></i></a>
-                <a href="#"><i class="fab fa-linkedin-in"></i></a>
-            </div>
-        </div>
-        
-        <div class="footer-bottom">
-            <p>&copy; 2025 Scentify</p>
-        </div>
-    </footer>
+    <div class="checkout-page-wrapper">
 
-    <script src=\"../JS/checkout.js\" defer></script>
+      <!-- LEFT: FORM -->
+      <section class="checkout-form-section" aria-label="Checkout Form">
+
+        <div class="checkout-steps">
+          <span class="step active">1. Contact</span>
+          <i class="fas fa-chevron-right" aria-hidden="true"></i>
+          <span class="step active">2. Shipping</span>
+          <i class="fas fa-chevron-right" aria-hidden="true"></i>
+          <span class="step">3. Payment</span>
+        </div>
+
+        <form id="checkoutForm" novalidate>
+
+          <!-- Contact -->
+          <div class="co-section">
+            <h2 class="co-section-title"><i class="fas fa-user" aria-hidden="true"></i> Contact</h2>
+            <div class="co-form-group">
+              <label for="email">Email or Phone Number</label>
+              <input type="email" id="email" placeholder="you@example.com" required>
+            </div>
+          </div>
+
+          <!-- Shipping -->
+          <div class="co-section">
+            <h2 class="co-section-title"><i class="fas fa-shipping-fast" aria-hidden="true"></i> Shipping</h2>
+            <div class="co-form-group">
+              <label for="country">Country / Region</label>
+              <select id="country" required>
+                <option value="">Select country</option>
+                <option value="pakistan" selected>Pakistan</option>
+                <option value="india">India</option>
+              </select>
+            </div>
+            <div class="co-form-row">
+              <div class="co-form-group">
+                <label for="firstName">First Name</label>
+                <input type="text" id="firstName" placeholder="Muhammad" required>
+              </div>
+              <div class="co-form-group">
+                <label for="lastName">Last Name</label>
+                <input type="text" id="lastName" placeholder="Ali" required>
+              </div>
+            </div>
+            <div class="co-form-group">
+              <label for="address">Address</label>
+              <input type="text" id="address" placeholder="Street address" required>
+            </div>
+            <div class="co-form-row">
+              <div class="co-form-group">
+                <label for="city">City</label>
+                <input type="text" id="city" placeholder="Lahore" required>
+              </div>
+              <div class="co-form-group">
+                <label for="phone">Phone</label>
+                <input type="tel" id="phone" placeholder="+92 300 0000000" required>
+              </div>
+            </div>
+          </div>
+
+          <!-- Shipping Method -->
+          <div class="co-section">
+            <h2 class="co-section-title"><i class="fas fa-truck" aria-hidden="true"></i> Shipping Method</h2>
+            <div class="co-radio-group">
+              <label class="co-radio-card">
+                <input type="radio" name="shipping_method" value="free">
+                <span class="co-radio-label">Free Shipping <em>(5–7 days)</em></span>
+                <span class="co-radio-cost free-cost">FREE</span>
+              </label>
+              <label class="co-radio-card">
+                <input type="radio" name="shipping_method" value="standard" checked>
+                <span class="co-radio-label">Standard <em>(2–3 days)</em></span>
+                <span class="co-radio-cost">Rs. 200</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- Payment -->
+          <div class="co-section">
+            <h2 class="co-section-title"><i class="fas fa-lock" aria-hidden="true"></i> Payment</h2>
+            <p class="co-secure-note"><i class="fas fa-shield-alt" aria-hidden="true"></i> All transactions are secure and encrypted.</p>
+            <div class="co-radio-group">
+              <label class="co-radio-card">
+                <input type="radio" name="payment_method" value="card" checked>
+                <span class="co-radio-label"><i class="fas fa-credit-card" aria-hidden="true"></i> Debit / Credit Card</span>
+              </label>
+              <label class="co-radio-card">
+                <input type="radio" name="payment_method" value="cod">
+                <span class="co-radio-label"><i class="fas fa-money-bill-wave" aria-hidden="true"></i> Cash On Delivery (COD)</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- Billing -->
+          <div class="co-section">
+            <h2 class="co-section-title"><i class="fas fa-file-invoice" aria-hidden="true"></i> Billing Address</h2>
+            <div class="co-radio-group">
+              <label class="co-radio-card">
+                <input type="radio" name="billing_address" value="same" checked>
+                <span class="co-radio-label">Same as shipping address</span>
+              </label>
+              <label class="co-radio-card">
+                <input type="radio" name="billing_address" value="different">
+                <span class="co-radio-label">Use a different billing address</span>
+              </label>
+            </div>
+          </div>
+
+          <button type="submit" class="place-order-btn" id="placeOrderBtn">
+            Place Order <i class="fas fa-arrow-right" aria-hidden="true"></i>
+          </button>
+
+        </form>
+      </section>
+
+      <!-- RIGHT: ORDER SUMMARY -->
+      <aside class="order-summary-section" aria-label="Order Summary">
+        <h2 class="co-section-title">Order Summary</h2>
+
+        <p id="emptyCartMessage" class="empty-cart-msg" style="display:none;">
+          Your cart is empty. <a href="productlisting.html">Browse products</a>
+        </p>
+
+        <div id="cartItemsList" class="cart-items-list"></div>
+
+        <div class="summary-totals">
+          <div class="summary-row">
+            <span>Subtotal</span>
+            <span id="subtotalDisplay">Rs. 0</span>
+          </div>
+          <div class="summary-row">
+            <span>Shipping</span>
+            <span id="shippingDisplay">Rs. 0</span>
+          </div>
+          <div class="summary-row total-row">
+            <span>Total</span>
+            <span id="orderTotalDisplay">Rs. 0</span>
+          </div>
+        </div>
+      </aside>
+
+    </div>
+  </main>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="main-footer" aria-label="Site Footer">
+    <div class="footer-content">
+      <div class="footer-brand">
+        <a href="index.html" class="logo-text footer-logo-text" aria-label="Scentify Home">Scent<span>ify</span></a>
+        <p class="footer-tagline">Wear the Unseen.</p>
+        <div class="social-links">
+          <a href="https://www.facebook.com/" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://www.instagram.com/" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="https://twitter.com/" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+          <a href="https://www.linkedin.com/" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+      </div>
+      <div class="footer-section">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="ourstory.html">About Us</a></li>
+          <li><a href="#">FAQ's</a></li>
+          <li><a href="#">Returns</a></li>
+          <li><a href="#">Terms &amp; Conditions</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>Customer Services</h3>
+        <ul>
+          <li><a href="#">Scentify Media Page</a></li>
+          <li><a href="#">Terms Of Service</a></li>
+          <li><a href="#">Refund &amp; Exchange Policy</a></li>
+          <li><a href="#">Track My Order</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>Contact Info</h3>
+        <ul>
+          <li><i class="fas fa-envelope"></i> Support@Scentify.com</li>
+          <li><i class="fas fa-phone"></i> +92 300 1234567</li>
+          <li><i class="fas fa-map-marker-alt"></i> Lahore, Pakistan</li>
+        </ul>
+      </div>
+      <div class="footer-section address-section">
+        <h3>Our Outlet</h3>
+        <p>Shop G-179, Musk Al Mahal, Opp Rex Centre,<br>Next To Meezan Bank, Panorama Centre,<br>Saddar, Karachi.</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Scentify. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="../JS/script.js" defer></script>
+  <script src="../JS/checkout.js" defer></script>
 </body>
+
 </html>
