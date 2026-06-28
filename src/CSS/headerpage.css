@@ -28,7 +28,7 @@ h1, h2, h3, h4 {
 /* --- Hero Section (Background Image) --- */
 .hero-section {
     /* *** YAHAN APNI BACKGROUND IMAGE KA PATH BADLEN *** */
-    background-image: url('headaerpageb.jpg'); 
+    background-image: url('../../Images/headaerpageb.jpg'); 
     background-size: cover;
     background-position: center top; /* Center aur top se shuru ho */
     background-repeat: no-repeat;

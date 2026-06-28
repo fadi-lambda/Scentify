@@ -50,7 +50,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 
                 // Note: Image Path (product1.jpg, etc.)
                 const productNumber = item.id.replace('p', ''); 
-                const imagePath = `product${productNumber}.jpg`; 
+                const imagePath = `../../Images/product${productNumber}.jpg`; 
 
                 const row = document.createElement('tr');
                 row.innerHTML = `

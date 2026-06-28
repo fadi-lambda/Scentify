@@ -53,9 +53,6 @@ document.addEventListener('DOMContentLoaded', () => {
             subtotalDisplay.textContent = `Rs. ${subtotal.toFixed(2)}`;
             shippingDisplay.textContent = `Rs. ${shippingAmount.toFixed(2)}`;
             orderTotalDisplay.textContent = `Rs. ${orderTotal.toFixed(2)}`;
-
-            console.log("Checkout calculated successfully.");
-            console.log(`Subtotal: Rs.${subtotal.toFixed(2)}, Total: Rs.${orderTotal.toFixed(2)}`);
         }
     }
 

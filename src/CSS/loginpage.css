@@ -13,7 +13,7 @@ body {
 /* --- Main Container & Background --- */
 .login-page-container {
     /* *** YAHAN APNI BACKGROUND IMAGE KA PATH BADLEN *** */
-    background-image: url('loginpagebackground.png'); 
+    background-image: url('../../Images/loginpagebackground.png'); 
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
