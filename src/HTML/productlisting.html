@@ -1,241 +1,351 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Scentify Products</title>
-    <link rel="stylesheet" href="../CSS/productlistingpage.css"> 
-    
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Shop all Scentify premium attars and concentrated perfume oils. Free delivery above Rs.2,500.">
+  <title>Shop All Products – Scentify</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="../CSS/style.css">
 </head>
+
 <body>
 
-    <header class="main-header" id="mainHeader">
-        <div class="header-content">
-            <div class="search-bar">
-                <i class="fas fa-search"></i>
-                <input type="text" placeholder="Search">
-            </div>
-            
-            <div class="logo">
-                <img src="../../Images/logopic.png" alt="Scentify Logo">
-                <span class="logo-fragrances"></span>
-            </div>
-            
-            <div class="user-actions">
-                <a href="loginpage.html" class="header-action-text"><i class="fas fa-user"></i> ACCOUNT</a>
-                
-                <a href="checkoutpage.html" class="header-action-text" id="cartLink"><i class="fas fa-shopping-cart"></i> CART (<span id="cartItemCount">0</span>)</a>
-            </div>
+  <!-- ===================== HEADER ===================== -->
+  <header id="fixed-header" class="fixed-header">
+    <div class="announcement-bar">
+      <span>🎁 Free Delivery on Orders Above Rs.2,500 &nbsp;|&nbsp; 7 Days Easy Return Policy</span>
+      <div class="social-icons-desktop">
+        <a href="https://www.facebook.com/" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.instagram.com/" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.youtube.com/" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+      </div>
+    </div>
+    <div class="header-main">
+      <div class="header-container">
+        <div class="search-bar-desktop">
+          <div class="search-input-wrapper">
+            <label for="desktop-search" class="sr-only">Search products</label>
+            <input id="desktop-search" type="text" placeholder="Search products...">
+            <i class="fas fa-search" aria-hidden="true"></i>
+          </div>
         </div>
-    </header>
-
-    <div id="cartNotification" class="cart-notification"></div>
-
-    <main class="product-listing-page">
-        
-        <div class="product-wrapper">
-            
-            <div class="listing-header">
-                <h2>Revolutionizing The Attar Era, The Modern Way</h2>
-                <div class="sort-option">
-                    <span>Sort</span>
-                    <i class="fas fa-sort-down"></i>
-                </div>
-            </div>
-
-            <div class="product-grid">
-
-                <div class="product-card">
-                    <img src="../../Images/product1.jpg" alt="Sultan E Ameer Attar">
-                    <div class="product-details">
-                        <p class="title">Sultan E Ameer | Concentarted Perfume | Attar Oil</p>
-                        <p class="subtitle">Addition To Arabia</p>
-                        <div class="rating-reviews">
-                            <span class="stars">
-                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i> 
-                            </span>
-                            <span class="reviews">(99)</span>
-                        </div>
-                        <div class="price-add-to-cart">
-                            <span class="price-info">
-                                <span class="price-label">Price</span>
-                                <span class="price">Rs.1,499.00</span>
-                            </span>
-                            <button class="add-btn" data-id="p1" data-name="Sultan E Ameer Attar" data-price="1499.00">
-                                <i class="fas fa-plus"></i>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="product-card">
-                    <img src="../../Images/product2.jpg" alt="Black & Silver Platinum Attar">
-                    <div class="product-details">
-                        <p class="title">Black & Silver Platinum | Concentarted Perfume | Attar Oil</p>
-                        <p class="subtitle">Upgrading Our Best Fragrance</p>
-                        <div class="rating-reviews">
-                            <span class="stars">
-                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i><i class="far fa-star"></i> 
-                            </span>
-                            <span class="reviews">(78)</span>
-                        </div>
-                        <div class="price-add-to-cart">
-                            <span class="price-info">
-                                <span class="price-label">Price</span>
-                                <span class="price">Rs.1,499.00</span>
-                            </span>
-                            <button class="add-btn" data-id="p2" data-name="Black & Silver Platinum Attar" data-price="1499.00">
-                                <i class="fas fa-plus"></i>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="product-card">
-                    <img src="../../Images/product3.jpg" alt="Mysterious Oudh">
-                    <div class="product-details">
-                        <p class="title">Mysterious Oudh | Premium Attar | Concentrated</p>
-                        <p class="subtitle">King of the Series</p>
-                        <div class="rating-reviews">
-                            <span class="stars">
-                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i> 
-                            </span>
-                            <span class="reviews">(56)</span>
-                        </div>
-                        <div class="price-add-to-cart">
-                            <span class="price-info">
-                                <span class="price-label">Price</span>
-                                <span class="price">Rs.1,899.00</span>
-                            </span>
-                            <button class="add-btn" data-id="p3" data-name="Mysterious Oudh" data-price="1899.00">
-                                <i class="fas fa-plus"></i>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="product-card">
-                    <img src="../../Images/product4.jpg" alt="White Oudh">
-                    <div class="product-details">
-                        <p class="title">White Oudh | Premium Attars | Concentrated Oils</p>
-                        <p class="subtitle">Classy Men's Fragrance</p>
-                        <div class="rating-reviews">
-                            <span class="stars">
-                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i> 
-                            </span>
-                            <span class="reviews">(89)</span>
-                        </div>
-                        <div class="price-add-to-cart">
-                            <span class="price-info">
-                                <span class="price-label">Price</span>
-                                <span class="price">Rs.999.00</span>
-                            </span>
-                            <button class="add-btn" data-id="p4" data-name="White Oudh" data-price="999.00">
-                                <i class="fas fa-plus"></i>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="product-card">
-                    <img src="../../Images/product5.jpg" alt="Black N Gold">
-                    <div class="product-details">
-                        <p class="title">Black N Gold | premium attar | 12ml</p>
-                        <p class="subtitle">Smell Like a Sultan</p>
-                        <div class="rating-reviews">
-                            <span class="stars">
-                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i> 
-                            </span>
-                            <span class="reviews">(119)</span>
-                        </div>
-                        <div class="price-add-to-cart">
-                            <span class="price-info">
-                                <span class="price-label">Price</span>
-                                <span class="price">Rs.2,500.00</span>
-                            </span>
-                            <button class="add-btn" data-id="p5" data-name="Black N Gold" data-price="2500.00">
-                                <i class="fas fa-plus"></i>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="product-card">
-                    <img src="../../Images/product6.jpg" alt="Soule of Arabia set">
-                    <div class="product-details">
-                        <p class="title">Soule of arabia set | premium set</p>
-                        <p class="subtitle">Our Best Era</p>
-                        <div class="rating-reviews">
-                            <span class="stars">
-                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i> 
-                            </span>
-                            <span class="reviews">(109)</span>
-                        </div>
-                        <div class="price-add-to-cart">
-                            <span class="price-info">
-                                <span class="price-label">Price</span>
-                                <span class="price">Rs.1,600.00</span>
-                            </span>
-                            <button class="add-btn" data-id="p6" data-name="Soule of Arabia set" data-price="1600.00">
-                                <i class="fas fa-plus"></i>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="product-card">
-                    <img src="../../Images/product7.jpg" alt="Mysterious bundle">
-                    <div class="product-details">
-                        <p class="title">Mysterious bundle | premium attar</p>
-                        <p class="subtitle">Rich Masculine scent</p>
-                        <div class="rating-reviews">
-                            <span class="stars">
-                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i> 
-                            </span>
-                            <span class="reviews">(95)</span>
-                        </div>
-                        <div class="price-add-to-cart">
-                            <span class="price-info">
-                                <span class="price-label">Price</span>
-                                <span class="price">Rs.1,600.00</span>
-                            </span>
-                            <button class="add-btn" data-id="p7" data-name="Mysterious bundle" data-price="1600.00">
-                                <i class="fas fa-plus"></i>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="product-card">
-                    <img src="../../Images/product8.jpg" alt="Black & Silver Platinum">
-                    <div class="product-details">
-                        <p class="title">Black & Silver Platinum | Concentrated Perfume</p>
-                        <p class="subtitle">Attar Oil</p>
-                        <div class="rating-reviews">
-                            <span class="stars">
-                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i><i class="far fa-star"></i> 
-                            </span>
-                            <span class="reviews">(79)</span>
-                        </div>
-                        <div class="price-add-to-cart">
-                            <span class="price-info">
-                                <span class="price-label">Price</span>
-                                <span class="price">Rs.3,000.00</span>
-                            </span>
-                            <button class="add-btn" data-id="p8" data-name="Black & Silver Platinum" data-price="3000.00">
-                                <i class="fas fa-plus"></i>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-                
-            </div>
+        <div class="logo-wrapper">
+          <a href="index.html" class="logo-text" aria-label="Scentify Home">Scent<span>ify</span></a>
         </div>
-    </main>
-    
-    <script src="../JS/productpage.js" defer></script> 
+        <div class="header-icons">
+          <button class="search-mobile-icon" aria-label="Open Search"><i class="fas fa-search"></i></button>
+          <a href="loginpage.html" class="icon-link" aria-label="My Account">
+            <i class="fas fa-user"></i><span class="icon-label">Account</span>
+          </a>
+          <a href="checkoutpage.html" class="icon-link cart-icon-wrapper" aria-label="Shopping Cart">
+            <i class="fas fa-shopping-cart"></i><span class="icon-label">Cart</span>
+            <span class="cart-count" id="cartItemCount" aria-live="polite">0</span>
+          </a>
+          <button class="menu-mobile-icon" aria-label="Open Menu"><i class="fas fa-bars"></i></button>
+        </div>
+      </div>
+    </div>
+    <nav class="nav-links-desktop" aria-label="Main Navigation">
+      <div class="nav-container">
+        <ul class="nav-list">
+          <li><a href="index.html">HOME</a></li>
+          <li><a href="productlisting.html" class="dropdown-link">SHOP <i class="fas fa-chevron-down"></i></a></li>
+          <li><a href="#">BEST SELLERS</a></li>
+          <li><a href="#">DEALS</a></li>
+          <li><a href="#">TESTERS</a></li>
+          <li><a href="#">OUR OUTLETS</a></li>
+          <li><a href="#">BLOGS</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
 
+  <!-- ===================== MAIN ===================== -->
+  <main>
+
+    <div class="breadcrumb-bar">
+      <div class="breadcrumb-inner">
+        <a href="index.html">Home</a>
+        <i class="fas fa-chevron-right" aria-hidden="true"></i>
+        <span>Shop</span>
+      </div>
+    </div>
+
+    <div class="listing-page-wrapper">
+
+      <div class="listing-header">
+        <div>
+          <p class="section-eyebrow">Our Collection</p>
+          <h1 class="listing-title">All Products</h1>
+          <p class="listing-subtitle">Revolutionizing the Attar era, the modern way.</p>
+        </div>
+        <div class="listing-controls">
+          <span class="results-count" id="resultsCount">8 products</span>
+          <div class="sort-wrapper">
+            <label for="sortSelect" class="sr-only">Sort products</label>
+            <select id="sortSelect" class="sort-select">
+              <option value="default">Sort: Featured</option>
+              <option value="price-asc">Price: Low to High</option>
+              <option value="price-desc">Price: High to Low</option>
+              <option value="rating">Top Rated</option>
+            </select>
+            <i class="fas fa-chevron-down" aria-hidden="true"></i>
+          </div>
+        </div>
+      </div>
+
+      <div id="cartNotification" class="cart-notification" role="status" aria-live="polite"></div>
+
+      <div class="pl-product-grid" id="productGrid">
+
+        <article class="pl-product-card" data-price="2199" data-rating="4">
+          <a href="Sultan_Ameer_Detail_Page.html" class="pl-card-image-link">
+            <div class="pl-card-img-wrapper">
+              <img src="../Images/Sultan A1.webp" alt="Sultan E Ameer Attar Oil" loading="lazy">
+              <span class="product-badge">Bestseller</span>
+            </div>
+          </a>
+          <div class="pl-card-details">
+            <a href="Sultan_Ameer_Detail_Page.html" class="pl-card-title">Sultan E Ameer | Concentrated Perfume | Attar Oil</a>
+            <p class="pl-card-subtitle">Addition To Arabia</p>
+            <div class="pl-card-rating" aria-label="4 out of 5 stars, 99 reviews">
+              <i class="fas fa-star" aria-hidden="true"></i><i class="fas fa-star" aria-hidden="true"></i>
+              <i class="fas fa-star" aria-hidden="true"></i><i class="fas fa-star" aria-hidden="true"></i>
+              <i class="far fa-star" aria-hidden="true"></i><span>(99)</span>
+            </div>
+            <div class="pl-card-footer">
+              <span class="pl-card-price">Rs. 2,199</span>
+              <button class="pl-add-btn" data-id="p1" data-name="Sultan E Ameer Attar" data-price="2199" aria-label="Add Sultan E Ameer to cart">
+                <i class="fas fa-shopping-cart" aria-hidden="true"></i> Add
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <article class="pl-product-card" data-price="1499" data-rating="3.5">
+          <a href="#" class="pl-card-image-link">
+            <div class="pl-card-img-wrapper">
+              <img src="../Images/Black & Silver Platinum.webp" alt="Black and Silver Platinum Attar Oil" loading="lazy">
+            </div>
+          </a>
+          <div class="pl-card-details">
+            <a href="#" class="pl-card-title">Black &amp; Silver Platinum | Concentrated Perfume | Attar Oil</a>
+            <p class="pl-card-subtitle">Upgrading Our Best Fragrance</p>
+            <div class="pl-card-rating" aria-label="3.5 out of 5 stars, 78 reviews">
+              <i class="fas fa-star" aria-hidden="true"></i><i class="fas fa-star" aria-hidden="true"></i>
+              <i class="fas fa-star" aria-hidden="true"></i><i class="fas fa-star-half-alt" aria-hidden="true"></i>
+              <i class="far fa-star" aria-hidden="true"></i><span>(78)</span>
+            </div>
+            <div class="pl-card-footer">
+              <span class="pl-card-price">Rs. 1,499</span>
+              <button class="pl-add-btn" data-id="p2" data-name="Black & Silver Platinum Attar" data-price="1499" aria-label="Add Black and Silver Platinum to cart">
+                <i class="fas fa-shopping-cart" aria-hidden="true"></i> Add
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <article class="pl-product-card" data-price="1899" data-rating="5">
+          <a href="#" class="pl-card-image-link">
+            <div class="pl-card-img-wrapper">
+              <img src="../Images/Black & Silver Oud.webp" alt="Mysterious Oudh Premium Attar" loading="lazy">
+              <span class="product-badge new-badge">New</span>
+            </div>
+          </a>
+          <div class="pl-card-details">
+            <a href="#" class="pl-card-title">Mysterious Oudh | Premium Attar | Concentrated</a>
+            <p class="pl-card-subtitle">King of the Series</p>
+            <div class="pl-card-rating" aria-label="5 out of 5 stars, 56 reviews">
+              <i class="fas fa-star" aria-hidden="true"></i><i class="fas fa-star" aria-hidden="true"></i>
+              <i class="fas fa-star" aria-hidden="true"></i><i class="fas fa-star" aria-hidden="true"></i>
+              <i class="fas fa-star" aria-hidden="true"></i><span>(56)</span>
+            </div>
+            <div class="pl-card-footer">
+              <span class="pl-card-price">Rs. 1,899</span>
+              <button class="pl-add-btn" data-id="p3" data-name="Mysterious Oudh" data-price="1899" aria-label="Add Mysterious Oudh to cart">
+                <i class="fas fa-shopping-cart" aria-hidden="true"></i> Add
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <article class="pl-product-card" data-price="999" data-rating="5">
+          <a href="#" class="pl-card-image-link">
+            <div class="pl-card-img-wrapper">
+              <img src="../Images/White Oud.webp" alt="White Oudh Concentrated Oil" loading="lazy">
+            </div>
+          </a>
+          <div class="pl-card-details">
+            <a href="#" class="pl-card-title">White Oudh | Premium Attars | Concentrated Oils</a>
+            <p class="pl-card-subtitle">Classy Men's Fragrance</p>
+            <div class="pl-card-rating" aria-label="5 out of 5 stars, 89 reviews">
+              <i class="fas fa-star" aria-hidden="true"></i><i class="fas fa-star" aria-hidden="true"></i>
+              <i class="fas fa-star" aria-hidden="true"></i><i class="fas fa-star" aria-hidden="true"></i>
+              <i class="fas fa-star" aria-hidden="true"></i><span>(89)</span>
+            </div>
+            <div class="pl-card-footer">
+              <span class="pl-card-price">Rs. 999</span>
+              <button class="pl-add-btn" data-id="p4" data-name="White Oudh" data-price="999" aria-label="Add White Oudh to cart">
+                <i class="fas fa-shopping-cart" aria-hidden="true"></i> Add
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <article class="pl-product-card" data-price="2500" data-rating="5">
+          <a href="#" class="pl-card-image-link">
+            <div class="pl-card-img-wrapper">
+              <img src="../Images/Ameer Al Oud.webp" alt="Black N Gold Premium Attar 12ml" loading="lazy">
+            </div>
+          </a>
+          <div class="pl-card-details">
+            <a href="#" class="pl-card-title">Black N Gold | Premium Attar | 12ml</a>
+            <p class="pl-card-subtitle">Smell Like a Sultan</p>
+            <div class="pl-card-rating" aria-label="5 out of 5 stars, 119 reviews">
+              <i class="fas fa-star" aria-hidden="true"></i><i class="fas fa-star" aria-hidden="true"></i>
+              <i class="fas fa-star" aria-hidden="true"></i><i class="fas fa-star" aria-hidden="true"></i>
+              <i class="fas fa-star" aria-hidden="true"></i><span>(119)</span>
+            </div>
+            <div class="pl-card-footer">
+              <span class="pl-card-price">Rs. 2,500</span>
+              <button class="pl-add-btn" data-id="p5" data-name="Black N Gold" data-price="2500" aria-label="Add Black N Gold to cart">
+                <i class="fas fa-shopping-cart" aria-hidden="true"></i> Add
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <article class="pl-product-card" data-price="1600" data-rating="5">
+          <a href="#" class="pl-card-image-link">
+            <div class="pl-card-img-wrapper">
+              <img src="../Images/Sultan A1.webp" alt="Soul of Arabia Premium Set" loading="lazy">
+              <span class="product-badge" style="background:#7c3aed;color:#fff;">Bundle</span>
+            </div>
+          </a>
+          <div class="pl-card-details">
+            <a href="#" class="pl-card-title">Soul of Arabia Set | Premium Bundle</a>
+            <p class="pl-card-subtitle">Our Best Era</p>
+            <div class="pl-card-rating" aria-label="5 out of 5 stars, 109 reviews">
+              <i class="fas fa-star" aria-hidden="true"></i><i class="fas fa-star" aria-hidden="true"></i>
+              <i class="fas fa-star" aria-hidden="true"></i><i class="fas fa-star" aria-hidden="true"></i>
+              <i class="fas fa-star" aria-hidden="true"></i><span>(109)</span>
+            </div>
+            <div class="pl-card-footer">
+              <span class="pl-card-price">Rs. 1,600</span>
+              <button class="pl-add-btn" data-id="p6" data-name="Soul of Arabia Set" data-price="1600" aria-label="Add Soul of Arabia Set to cart">
+                <i class="fas fa-shopping-cart" aria-hidden="true"></i> Add
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <article class="pl-product-card" data-price="1600" data-rating="5">
+          <a href="#" class="pl-card-image-link">
+            <div class="pl-card-img-wrapper">
+              <img src="../Images/Black & Silver Oud.webp" alt="Mysterious Bundle Premium Attar" loading="lazy">
+            </div>
+          </a>
+          <div class="pl-card-details">
+            <a href="#" class="pl-card-title">Mysterious Bundle | Premium Attar</a>
+            <p class="pl-card-subtitle">Rich Masculine Scent</p>
+            <div class="pl-card-rating" aria-label="5 out of 5 stars, 95 reviews">
+              <i class="fas fa-star" aria-hidden="true"></i><i class="fas fa-star" aria-hidden="true"></i>
+              <i class="fas fa-star" aria-hidden="true"></i><i class="fas fa-star" aria-hidden="true"></i>
+              <i class="fas fa-star" aria-hidden="true"></i><span>(95)</span>
+            </div>
+            <div class="pl-card-footer">
+              <span class="pl-card-price">Rs. 1,600</span>
+              <button class="pl-add-btn" data-id="p7" data-name="Mysterious Bundle" data-price="1600" aria-label="Add Mysterious Bundle to cart">
+                <i class="fas fa-shopping-cart" aria-hidden="true"></i> Add
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <article class="pl-product-card" data-price="3000" data-rating="3.5">
+          <a href="#" class="pl-card-image-link">
+            <div class="pl-card-img-wrapper">
+              <img src="../Images/Black & Silver Platinum.webp" alt="Black and Silver Platinum Concentrated Perfume" loading="lazy">
+            </div>
+          </a>
+          <div class="pl-card-details">
+            <a href="#" class="pl-card-title">Black &amp; Silver Platinum | Concentrated Perfume</a>
+            <p class="pl-card-subtitle">Attar Oil</p>
+            <div class="pl-card-rating" aria-label="3.5 out of 5 stars, 79 reviews">
+              <i class="fas fa-star" aria-hidden="true"></i><i class="fas fa-star" aria-hidden="true"></i>
+              <i class="fas fa-star" aria-hidden="true"></i><i class="fas fa-star-half-alt" aria-hidden="true"></i>
+              <i class="far fa-star" aria-hidden="true"></i><span>(79)</span>
+            </div>
+            <div class="pl-card-footer">
+              <span class="pl-card-price">Rs. 3,000</span>
+              <button class="pl-add-btn" data-id="p8" data-name="Black & Silver Platinum" data-price="3000" aria-label="Add Black and Silver Platinum to cart">
+                <i class="fas fa-shopping-cart" aria-hidden="true"></i> Add
+              </button>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </main>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="main-footer" aria-label="Site Footer">
+    <div class="footer-content">
+      <div class="footer-brand">
+        <a href="index.html" class="logo-text footer-logo-text" aria-label="Scentify Home">Scent<span>ify</span></a>
+        <p class="footer-tagline">Wear the Unseen.</p>
+        <div class="social-links">
+          <a href="https://www.facebook.com/" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://www.instagram.com/" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="https://twitter.com/" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+          <a href="https://www.linkedin.com/" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+      </div>
+      <div class="footer-section">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="ourstory.html">About Us</a></li>
+          <li><a href="#">FAQ's</a></li>
+          <li><a href="#">Returns</a></li>
+          <li><a href="#">Terms &amp; Conditions</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>Customer Services</h3>
+        <ul>
+          <li><a href="#">Scentify Media Page</a></li>
+          <li><a href="#">Terms Of Service</a></li>
+          <li><a href="#">Refund &amp; Exchange Policy</a></li>
+          <li><a href="#">Track My Order</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>Contact Info</h3>
+        <ul>
+          <li><i class="fas fa-envelope"></i> Support@Scentify.com</li>
+          <li><i class="fas fa-phone"></i> +92 300 1234567</li>
+          <li><i class="fas fa-map-marker-alt"></i> Lahore, Pakistan</li>
+        </ul>
+      </div>
+      <div class="footer-section address-section">
+        <h3>Our Outlet</h3>
+        <p>Shop G-179, Musk Al Mahal, Opp Rex Centre,<br>Next To Meezan Bank, Panorama Centre,<br>Saddar, Karachi.</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Scentify. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="../JS/script.js" defer></script>
+  <script src="../JS/productpage.js" defer></script>
 </body>
+
 </html>
