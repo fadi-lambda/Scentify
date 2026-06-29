@@ -1,103 +1,310 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Scentify - Contact Support</title>
-    <link rel="stylesheet" href="../CSS/supportpage.css">
-    
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Scentify Customer Support – Get help with orders, returns, and FAQs.">
+  <title>Support – Scentify</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="../CSS/style.css">
 </head>
+
 <body>
 
-    <header class="main-header">
-        <div class="header-content">
-            <div class="search-bar">
-                <i class="fas fa-search"></i>
-                <input type="text" placeholder="Search">
-                <i class="fas fa-microphone"></i> 
-            </div>
-            
-            <div class="logo">
-                <img src="../../Images/logopic.png" alt="Scentify Logo">
-                <span class="logo-fragrances"></span>
-            </div>
-            
-            <div class="user-actions">
-                <a href="loginpage.html" class="header-action-text"><i class="fas fa-user"></i> ACCOUNT</a>
-                <a href="checkoutpage.html" class="header-action-text"><i class="fas fa-shopping-cart"></i> CART</a>
-            </div>
+  <!-- ===================== HEADER ===================== -->
+  <header id="fixed-header" class="fixed-header">
+    <div class="announcement-bar">
+      <span>🎁 Free Delivery on Orders Above Rs.2,500 &nbsp;|&nbsp; 7 Days Easy Return Policy</span>
+      <div class="social-icons-desktop">
+        <a href="https://www.facebook.com/" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.instagram.com/" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.youtube.com/" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+      </div>
+    </div>
+    <div class="header-main">
+      <div class="header-container">
+        <div class="search-bar-desktop">
+          <div class="search-input-wrapper">
+            <label for="desktop-search" class="sr-only">Search products</label>
+            <input id="desktop-search" type="text" placeholder="Search products...">
+            <i class="fas fa-search" aria-hidden="true"></i>
+          </div>
         </div>
-    </header>
-
-    <main class="contact-page-wrapper">
-        
-        <section class="contact-banner">
-            <h1>Contact Scentify Support</h1>
-            <p>We're Here To Help You Find A Perfect Scent</p>
-        </section>
-
-        <div class="faq-box">
-            <div class="faq-content">
-                <i class="fas fa-comments"></i>
-                <p class="faq-title">Get Instant Answers (FAQs)</p>
-                <p class="faq-description">Before Reaching Out, Please Check Our Frequently Asked Questions. We Might Have Already Answered Your Query!</p>
-                <button class="faq-btn">Get FAQs Page</button>
-            </div>
+        <div class="logo-wrapper">
+          <a href="index.html" class="logo-text" aria-label="Scentify Home">Scent<span>ify</span></a>
         </div>
+        <div class="header-icons">
+          <button class="search-mobile-icon" aria-label="Open Search"><i class="fas fa-search"></i></button>
+          <a href="loginpage.html" class="icon-link" aria-label="My Account">
+            <i class="fas fa-user"></i><span class="icon-label">Account</span>
+          </a>
+          <a href="checkoutpage.html" class="icon-link cart-icon-wrapper" aria-label="Shopping Cart">
+            <i class="fas fa-shopping-cart"></i><span class="icon-label">Cart</span>
+            <span class="cart-count" aria-live="polite">0</span>
+          </a>
+          <button class="menu-mobile-icon" aria-label="Open Menu"><i class="fas fa-bars"></i></button>
+        </div>
+      </div>
+    </div>
+    <nav class="nav-links-desktop" aria-label="Main Navigation">
+      <div class="nav-container">
+        <ul class="nav-list">
+          <li><a href="index.html">HOME</a></li>
+          <li><a href="productlisting.html" class="dropdown-link">SHOP <i class="fas fa-chevron-down"></i></a></li>
+          <li><a href="#">BEST SELLERS</a></li>
+          <li><a href="#">DEALS</a></li>
+          <li><a href="#">TESTERS</a></li>
+          <li><a href="#">OUR OUTLETS</a></li>
+          <li><a href="#">BLOGS</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
 
-        <div class="support-content-grid">
-            
-            <div class="form-section">
-                <h2 class="section-title"><i class="fas fa-comment-dots"></i> Send Us Your Message</h2>
-                <form>
-                    <div class="form-row">
-                        <input type="text" placeholder="Your Name">
-                        <input type="text" placeholder="Order Number (Optional)">
-                    </div>
+  <!-- ===================== MAIN ===================== -->
+  <main>
 
-                    <div class="form-row">
-                        <input type="email" placeholder="Email Address">
-                        <select>
-                            <option value="" disabled selected>Subject</option>
-                            <option>Product Inquiry</option>
-                            <option>Order Status</option>
-                            <option>Returns/Exchange</option>
-                            <option>General Question</option>
-                        </select>
-                    </div>
+    <!-- BREADCRUMB -->
+    <div class="breadcrumb-bar">
+      <div class="breadcrumb-inner">
+        <a href="index.html">Home</a>
+        <i class="fas fa-chevron-right" aria-hidden="true"></i>
+        <span>Support</span>
+      </div>
+    </div>
 
-                    <textarea placeholder="Your Message"></textarea>
-                    
-                    <button type="submit" class="submit-btn">Submit Message</button>
-                </form>
-            </div>
+    <!-- HERO -->
+    <section class="support-hero" aria-label="Support Hero">
+      <p class="hero-eyebrow">We're Here For You</p>
+      <h1>Customer <span>Support</span></h1>
+      <p class="support-hero-sub">Have a question or need help with your order? We've got you covered.</p>
+    </section>
 
-            <div class="contact-info-section">
-                
-                <div class="contact-box email-box">
-                    <i class="fas fa-envelope"></i>
-                    <p class="contact-type">Email Support</p>
-                    <p class="contact-detail">Support@Scentify.Com</p>
-                </div>
-                
-                <div class="contact-box chat-box">
-                    <i class="fas fa-comments"></i>
-                    <p class="contact-type">Live Chat</p>
-                    <p class="contact-detail">Mon-Fri</p>
-                    <p class="contact-detail time">9AM-5AM(CST)</p>
-                </div>
+    <!-- CONTACT CARDS -->
+    <section class="support-channels" aria-labelledby="channels-heading">
+      <h2 id="channels-heading" class="sr-only">Contact Channels</h2>
+      <div class="support-channels-grid">
 
-                <div class="contact-box phone-box">
-                    <i class="fas fa-phone"></i>
-                    <p class="contact-type">Phone Support</p>
-                    <p class="contact-detail">(021) 35644514</p>
-                </div>
-            </div>
+        <div class="support-channel-card">
+          <div class="support-channel-icon"><i class="fab fa-whatsapp" aria-hidden="true"></i></div>
+          <h3>WhatsApp</h3>
+          <p>Chat with us directly for fast answers — we typically reply within minutes.</p>
+          <a href="https://wa.me/923001234567" class="support-channel-btn" target="_blank" rel="noopener">
+            Chat Now <i class="fas fa-arrow-right" aria-hidden="true"></i>
+          </a>
         </div>
 
-    </main>
+        <div class="support-channel-card support-channel-featured">
+          <div class="support-channel-icon"><i class="fas fa-envelope" aria-hidden="true"></i></div>
+          <h3>Email Support</h3>
+          <p>Send us your query and our support team will get back to you within 24 hours.</p>
+          <a href="mailto:Support@Scentify.com" class="support-channel-btn">
+            Email Us <i class="fas fa-arrow-right" aria-hidden="true"></i>
+          </a>
+        </div>
 
+        <div class="support-channel-card">
+          <div class="support-channel-icon"><i class="fas fa-phone" aria-hidden="true"></i></div>
+          <h3>Call Us</h3>
+          <p>Available Mon–Sat, 10am–7pm (PKT). We're happy to help over the phone.</p>
+          <a href="tel:+923001234567" class="support-channel-btn">
+            Call Now <i class="fas fa-arrow-right" aria-hidden="true"></i>
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- CONTACT FORM + INFO -->
+    <section class="support-body" aria-label="Contact Form and Info">
+      <div class="support-body-inner">
+
+        <!-- FORM -->
+        <div class="support-form-wrapper">
+          <h2>Send Us a Message</h2>
+          <p class="support-form-sub">Fill out the form and we'll get back to you within 24 hours.</p>
+
+          <form id="supportForm" novalidate>
+            <div class="support-form-group">
+              <label for="supportName">Full Name</label>
+              <input type="text" id="supportName" placeholder="Muhammad Ali" required>
+            </div>
+            <div class="support-form-group">
+              <label for="supportEmail">Email</label>
+              <input type="email" id="supportEmail" placeholder="you@example.com" required>
+            </div>
+            <div class="support-form-group">
+              <label for="supportSubject">Subject</label>
+              <select id="supportSubject" required>
+                <option value="">Select a topic</option>
+                <option value="order">Order Status / Tracking</option>
+                <option value="return">Return &amp; Exchange</option>
+                <option value="product">Product Question</option>
+                <option value="payment">Payment Issue</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+            <div class="support-form-group">
+              <label for="supportMessage">Message</label>
+              <textarea id="supportMessage" rows="5" placeholder="Describe your issue or question..." required></textarea>
+            </div>
+            <div id="supportFormMsg" class="support-form-msg" role="alert"></div>
+            <button type="submit" class="support-submit-btn">
+              Send Message <i class="fas fa-paper-plane" aria-hidden="true"></i>
+            </button>
+          </form>
+        </div>
+
+        <!-- INFO PANEL -->
+        <aside class="support-info-panel" aria-label="Contact Information">
+
+          <div class="support-info-block">
+            <h3><i class="fas fa-map-marker-alt" aria-hidden="true"></i> Our Outlet</h3>
+            <p>Shop G-179, Musk Al Mahal,<br>Opp Rex Centre, Next To Meezan Bank,<br>Panorama Centre, Saddar, Karachi.</p>
+          </div>
+
+          <div class="support-info-block">
+            <h3><i class="fas fa-clock" aria-hidden="true"></i> Working Hours</h3>
+            <ul class="support-hours-list">
+              <li><span>Monday – Saturday</span><span>10:00 AM – 7:00 PM</span></li>
+              <li><span>Sunday</span><span>Closed</span></li>
+            </ul>
+          </div>
+
+          <div class="support-info-block">
+            <h3><i class="fas fa-share-alt" aria-hidden="true"></i> Follow Us</h3>
+            <div class="support-social-links">
+              <a href="https://www.facebook.com/" aria-label="Facebook" target="_blank" rel="noopener"><i class="fab fa-facebook-f"></i></a>
+              <a href="https://www.instagram.com/" aria-label="Instagram" target="_blank" rel="noopener"><i class="fab fa-instagram"></i></a>
+              <a href="https://wa.me/923001234567" aria-label="WhatsApp" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i></a>
+              <a href="https://www.youtube.com/" aria-label="YouTube" target="_blank" rel="noopener"><i class="fab fa-youtube"></i></a>
+            </div>
+          </div>
+
+        </aside>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq-section" aria-labelledby="faq-heading">
+      <div class="faq-inner">
+        <p class="section-eyebrow">Common Questions</p>
+        <h2 id="faq-heading" class="section-heading">Frequently Asked Questions</h2>
+
+        <div class="faq-list" id="faqList">
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              How long does delivery take?
+              <i class="fas fa-chevron-down" aria-hidden="true"></i>
+            </button>
+            <div class="faq-answer">
+              <p>Standard delivery takes 2–3 business days. Free shipping (orders above Rs.2,500) takes 5–7 business days. You'll receive a tracking link via SMS once your order is dispatched.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              What is your return policy?
+              <i class="fas fa-chevron-down" aria-hidden="true"></i>
+            </button>
+            <div class="faq-answer">
+              <p>We offer a 7-day easy return and exchange policy. Products must be unused and in original packaging. Contact us via WhatsApp or email to initiate a return.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              Are your attars alcohol-free?
+              <i class="fas fa-chevron-down" aria-hidden="true"></i>
+            </button>
+            <div class="faq-answer">
+              <p>Yes — all Scentify attars are 100% pure concentrated perfume oils with no alcohol. They are safe for skin application and halal-certified.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              Can I track my order?
+              <i class="fas fa-chevron-down" aria-hidden="true"></i>
+            </button>
+            <div class="faq-answer">
+              <p>Yes. Once dispatched, you'll receive an SMS with your tracking number. You can also contact us on WhatsApp with your order ID for a real-time update.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              Do you offer Cash on Delivery (COD)?
+              <i class="fas fa-chevron-down" aria-hidden="true"></i>
+            </button>
+            <div class="faq-answer">
+              <p>Yes, COD is available across Pakistan. You can also pay via debit/credit card at checkout.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="main-footer" aria-label="Site Footer">
+    <div class="footer-content">
+      <div class="footer-brand">
+        <a href="index.html" class="logo-text footer-logo-text" aria-label="Scentify Home">Scent<span>ify</span></a>
+        <p class="footer-tagline">Wear the Unseen.</p>
+        <div class="social-links">
+          <a href="https://www.facebook.com/" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://www.instagram.com/" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="https://twitter.com/" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+          <a href="https://www.linkedin.com/" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+      </div>
+      <div class="footer-section">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="ourstory.html">About Us</a></li>
+          <li><a href="#">FAQ's</a></li>
+          <li><a href="#">Returns</a></li>
+          <li><a href="#">Terms &amp; Conditions</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>Customer Services</h3>
+        <ul>
+          <li><a href="#">Scentify Media Page</a></li>
+          <li><a href="#">Terms Of Service</a></li>
+          <li><a href="#">Refund &amp; Exchange Policy</a></li>
+          <li><a href="#">Track My Order</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>Contact Info</h3>
+        <ul>
+          <li><i class="fas fa-envelope"></i> Support@Scentify.com</li>
+          <li><i class="fas fa-phone"></i> +92 300 1234567</li>
+          <li><i class="fas fa-map-marker-alt"></i> Lahore, Pakistan</li>
+        </ul>
+      </div>
+      <div class="footer-section address-section">
+        <h3>Our Outlet</h3>
+        <p>Shop G-179, Musk Al Mahal, Opp Rex Centre,<br>Next To Meezan Bank, Panorama Centre,<br>Saddar, Karachi.</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Scentify. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="../JS/script.js" defer></script>
+  <script src="../JS/supportpage.js" defer></script>
 </body>
+
 </html>

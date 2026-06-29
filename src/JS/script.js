@@ -1,54 +1,48 @@
+// script.js — Scentify Global Script
+
+// Tab switching (Product Detail Page)
 function openTab(evt, tabName) {
-    var i, tabcontent, tablinks;
-    tabcontent = document.getElementsByClassName("tab-content");
-    for (i = 0; i < tabcontent.length; i++) {
-        tabcontent[i].classList.remove('active');
-    }
-    tablinks = document.getElementsByClassName("tab-button");
-    for (i = 0; i < tablinks.length; i++) {
-        tablinks[i].classList.remove('active');
-    }
-    document.getElementById(tabName).classList.add('active');
-    evt.currentTarget.classList.add('active');
+  const tabContents = document.getElementsByClassName('tab-content');
+  const tabButtons = document.getElementsByClassName('tab-button');
+
+  for (let i = 0; i < tabContents.length; i++) tabContents[i].classList.remove('active');
+  for (let i = 0; i < tabButtons.length; i++) tabButtons[i].classList.remove('active');
+
+  const target = document.getElementById(tabName);
+  if (target) target.classList.add('active');
+  if (evt && evt.currentTarget) evt.currentTarget.classList.add('active');
 }
-function showPage(pageId) {
-    const pages = document.querySelectorAll('.content-page');
-    pages.forEach(page => {
-        page.classList.remove('active');
-    });
-    const targetPage = document.getElementById(pageId);
-    if (targetPage) {
-        targetPage.classList.add('active');
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
-}
+
+// Quantity control (Product Detail Page)
 function updateQuantity(change) {
-    const qtyInput = document.getElementById('quantity');
-    let currentQty = parseInt(qtyInput.value);
-    let newQty = currentQty + change;
-
-    if (newQty < 1) {
-        newQty = 1;
-    }
-
-    qtyInput.value = newQty;
+  const qtyInput = document.getElementById('quantity');
+  if (!qtyInput) return;
+  let newQty = parseInt(qtyInput.value) + change;
+  qtyInput.value = Math.max(1, newQty);
 }
+
+// Thumbnail image switcher (Product Detail Page)
 function changeMainImage(thumbnail) {
-    const mainImage = document.getElementById('main-product-image');
-    mainImage.src = thumbnail.src;
-    mainImage.alt = thumbnail.alt;
-    const thumbnails = document.querySelectorAll('.thumbnail-image');
-    thumbnails.forEach(img => img.classList.remove('active'));
-    thumbnail.classList.add('active');
+  const mainImage = document.getElementById('main-product-image');
+  if (!mainImage) return;
+  mainImage.src = thumbnail.src;
+  mainImage.alt = thumbnail.alt;
+  document.querySelectorAll('.thumbnail-image').forEach(img => img.classList.remove('active'));
+  thumbnail.classList.add('active');
 }
-window.onload = function () {
-    showPage('home-page');
-    const defaultTab = document.getElementById('Description');
-    if (defaultTab) {
-        defaultTab.classList.add('active');
-    }
-    const defaultButton = document.querySelector('.tab-button');
-    if (defaultButton) {
-        defaultButton.classList.add('active');
-    }
-};
+
+// Global cart count sync on every page
+document.addEventListener('DOMContentLoaded', () => {
+  const cartCountEl = document.querySelector('.cart-count');
+  if (cartCountEl) {
+    const cart = JSON.parse(localStorage.getItem('scentifyCart')) || [];
+    const total = cart.reduce((sum, item) => sum + item.quantity, 0);
+    cartCountEl.textContent = total;
+  }
+
+  // Initialise first tab on detail page if present
+  const firstTabBtn = document.querySelector('.tab-button');
+  const firstTabContent = document.getElementById('Description');
+  if (firstTabBtn) firstTabBtn.classList.add('active');
+  if (firstTabContent) firstTabContent.classList.add('active');
+});

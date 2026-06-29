@@ -1,121 +1,78 @@
-// checkoutpage.js (Checkout Page ka Logic)
+// checkout.js — Checkout Page
 
 document.addEventListener('DOMContentLoaded', () => {
-    
-    // HTML elements references for Display
-    const cartTableBody = document.getElementById('cartTableBody'); 
-    const emptyCartMessage = document.getElementById('emptyCartMessage');
-    const cartItemsTable = document.getElementById('cartItemsTable');
-    const subtotalDisplay = document.getElementById('subtotalDisplay');
-    const shippingDisplay = document.getElementById('shippingDisplay');
-    const orderTotalDisplay = document.getElementById('orderTotalDisplay');
-    const cartItemCount = document.getElementById('cartItemCount'); // Header mein count ke liye
-    
-    // Form aur Shipping References
-    const shippingRadios = document.querySelectorAll('input[name="shipping_method"]');
-    const checkoutForm = document.getElementById('checkoutForm');
-    
-    // Constants
-    const FREE_SHIPPING_AMOUNT = 0.00;
-    const STANDARD_SHIPPING_AMOUNT = 200.00; 
 
-    // ✅ DATA LOAD LINE: Local Storage se data load karna (productlisting.js se)
-    let cart = JSON.parse(localStorage.getItem('scentifyCart')) || [];
-    // Check karein ki kaunsa radio button checked hai aur uske mutabiq shuruwaati amount set karein
-    let initialShippingRadio = document.querySelector('input[name="shipping_method"]:checked');
-    let currentShippingAmount = initialShippingRadio && initialShippingRadio.value === 'free' ? FREE_SHIPPING_AMOUNT : STANDARD_SHIPPING_AMOUNT;
+  const cartItemsList    = document.getElementById('cartItemsList');
+  const emptyCartMessage = document.getElementById('emptyCartMessage');
+  const subtotalDisplay  = document.getElementById('subtotalDisplay');
+  const shippingDisplay  = document.getElementById('shippingDisplay');
+  const orderTotalDisplay= document.getElementById('orderTotalDisplay');
+  const cartItemCount    = document.getElementById('cartItemCount');
+  const checkoutForm     = document.getElementById('checkoutForm');
+  const shippingRadios   = document.querySelectorAll('input[name="shipping_method"]');
 
-    // --- 1. Cart Items aur Totals Render Karna ---
-    function renderCart() {
-        if (!cartTableBody) return; 
-        cartTableBody.innerHTML = ''; 
-        let subtotal = 0;
-        let totalItems = 0;
+  const FREE_SHIPPING     = 0;
+  const STANDARD_SHIPPING = 200;
 
-        if (cart.length === 0) {
-            // Cart Khali hone par
-            if (emptyCartMessage) emptyCartMessage.style.display = 'block';
-            if (cartItemsTable) cartItemsTable.style.display = 'none';
-        } else {
-            // Items Display karna
-            if (emptyCartMessage) emptyCartMessage.style.display = 'none';
-            if (cartItemsTable) cartItemsTable.style.display = 'table';
-            
-            cart.forEach(item => {
-                const itemPrice = parseFloat(item.price);
-                const itemQuantity = parseInt(item.quantity);
-                const itemTotal = itemPrice * itemQuantity;
-                subtotal += itemTotal;
-                totalItems += itemQuantity; // Total item count
-                
-                // Note: Image Path (product1.jpg, etc.)
-                const productNumber = item.id.replace('p', ''); 
-                const imagePath = `../../Images/product${productNumber}.jpg`; 
+  let cart = JSON.parse(localStorage.getItem('scentifyCart')) || [];
 
-                const row = document.createElement('tr');
-                row.innerHTML = `
-                    <td style="display: flex; align-items: center; justify-content: space-between;">
-                        <div style="display: flex; align-items: center;">
-                            <img src="${imagePath}" alt="${item.name}" class="cart-item-img" style="margin-right: 10px;">
-                            <div style="font-size: 0.9em;">
-                                ${item.name} 
-                                <span style="display: block; color: #777;">Qty: ${itemQuantity}</span>
-                            </div>
-                        </div>
-                        <span style="font-weight: bold;">Rs. ${itemTotal.toFixed(2)}</span>
-                    </td>
-                `;
-                cartTableBody.appendChild(row);
-            });
-            
-            // Calculations
-            const orderTotal = subtotal + currentShippingAmount;
+  function getShippingCost() {
+    const checked = document.querySelector('input[name="shipping_method"]:checked');
+    return checked && checked.value === 'free' ? FREE_SHIPPING : STANDARD_SHIPPING;
+  }
 
-            // Display Totals
-            if (subtotalDisplay) subtotalDisplay.textContent = `Rs. ${subtotal.toFixed(2)}`;
-            if (shippingDisplay) shippingDisplay.textContent = `Rs. ${currentShippingAmount.toFixed(2)}`;
-            if (orderTotalDisplay) orderTotalDisplay.textContent = `Rs. ${orderTotal.toFixed(2)}`;
-        }
+  function renderCart() {
+    if (!cartItemsList) return;
+    cartItemsList.innerHTML = '';
+    let subtotal = 0;
+    let totalItems = 0;
 
-        // Header mein Cart Item Count update karna
-        if (cartItemCount) {
-            cartItemCount.textContent = totalItems;
-        }
-    }
-    
-    // --- 2. Shipping Change Listener (Calculations Update) ---
-    function handleShippingChange(e) {
-        if (e.target.value === 'free') {
-            currentShippingAmount = FREE_SHIPPING_AMOUNT;
-        } else if (e.target.value === 'standard') {
-            currentShippingAmount = STANDARD_SHIPPING_AMOUNT;
-        }
-        renderCart();
+    if (cart.length === 0) {
+      if (emptyCartMessage) emptyCartMessage.style.display = 'block';
+    } else {
+      if (emptyCartMessage) emptyCartMessage.style.display = 'none';
+
+      cart.forEach(item => {
+        const itemTotal = parseFloat(item.price) * parseInt(item.quantity);
+        subtotal += itemTotal;
+        totalItems += item.quantity;
+
+        const div = document.createElement('div');
+        div.className = 'checkout-cart-item';
+        div.innerHTML = `
+          <div class="checkout-cart-item-info">
+            <span class="checkout-item-name">${item.name}</span>
+            <span class="checkout-item-qty">Qty: ${item.quantity}</span>
+          </div>
+          <span class="checkout-item-price">Rs. ${itemTotal.toLocaleString()}</span>
+        `;
+        cartItemsList.appendChild(div);
+      });
+
+      const shipping = getShippingCost();
+      const total = subtotal + shipping;
+
+      if (subtotalDisplay)   subtotalDisplay.textContent   = `Rs. ${subtotal.toLocaleString()}`;
+      if (shippingDisplay)   shippingDisplay.textContent   = shipping === 0 ? 'FREE' : `Rs. ${shipping.toLocaleString()}`;
+      if (orderTotalDisplay) orderTotalDisplay.textContent = `Rs. ${total.toLocaleString()}`;
     }
 
-    shippingRadios.forEach(radio => {
-        radio.addEventListener('change', handleShippingChange);
+    if (cartItemCount) cartItemCount.textContent = totalItems;
+  }
+
+  shippingRadios.forEach(r => r.addEventListener('change', renderCart));
+
+  if (checkoutForm) {
+    checkoutForm.addEventListener('submit', e => {
+      e.preventDefault();
+      if (cart.length === 0) {
+        alert('Your cart is empty. Please add items before placing an order.');
+        return;
+      }
+      alert('Order placed successfully! Thank you for shopping with Scentify.');
+      localStorage.removeItem('scentifyCart');
     });
-    
-    // --- 3. Place Order Validation Logic ---
-    if (checkoutForm) {
-        checkoutForm.addEventListener('submit', (e) => {
-            
-            // Cart Empty Validation
-            if (cart.length === 0) {
-                e.preventDefault(); 
-                alert("Please add items to your cart before placing an order.");
-                return;
-            }
-            
-            // Agar HTML validation aur Cart validation dono pass ho gaye
-            e.preventDefault(); 
-            
-            alert("Success! Your order has been placed. All required details were filled."); 
-            
-        });
-    }
+  }
 
-    // Page load hone par shuruwaati render
-    renderCart();
+  renderCart();
 });

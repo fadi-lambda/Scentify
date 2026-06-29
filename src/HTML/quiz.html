@@ -2,253 +2,277 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Scent Personality Quiz</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <link rel="stylesheet" href="../CSS/quiz.css">
-    <script src="../JS/quiz.js"></script>
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Take the Scentify Fragrance Finder quiz and discover your perfect attar in 2 minutes.">
+  <title>Fragrance Finder Quiz – Scentify</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="../CSS/style.css">
 </head>
 
 <body>
 
-    <header id="fixed-header" class="fixed-header">
-        <div class="announcement-bar">
-            7 Days Easy Return & Exchange Policy
-            <div class="social-icons-desktop">
-                <a href="#" aria-label="Facebook" class="transition"><i class="fab fa-facebook-f"></i></a>
-                <a href="#" aria-label="Instagram" class="transition"><i class="fab fa-instagram"></i></a>
-                <a href="#" aria-label="YouTube" class="transition"><i class="fab fa-youtube"></i></a>
-            </div>
-        </div>
-        <div class="header-main">
-            <div class="header-container">
-                <div class="search-bar-desktop">
-                    <div class="search-input-wrapper">
-                        <input type="text" placeholder="Search products...">
-                        <i class="fas fa-search"></i>
-                    </div>
-                </div>
-                <div class="logo-wrapper">
-                    <h1 class="logo-text">
-                        <span>SCENTIFY</span>
-                    </h1>
-                </div>
-                <div class="header-icons">
-                    <button class="search-mobile-icon" aria-label="Open Search">
-                        <i class="fas fa-search"></i>
-                    </button>
-                    <a href="#" class="icon-link">
-                        <i class="fas fa-user"></i>
-                        <span class="icon-label">Account</span>
-                    </a>
-                    <a href="#" class="icon-link cart-icon-wrapper">
-                        <i class="fas fa-shopping-cart"></i>
-                        <span class="icon-label">Cart</span>
-                    </a>
-                    <button class="menu-mobile-icon" aria-label="Open Menu">
-                        <i class="fas fa-bars"></i>
-                    </button>
-                </div>
-            </div>
-        </div>
-        <nav class="nav-links-desktop">
-            <div class="nav-container">
-                <ul class="nav-list">
-                    <li><a href="#" onclick="showPage('home-page'); return false;">HOME</a></li>
-                    <li><a href="#" class="dropdown-link">SHOP <i class="fas fa-chevron-down"></i></a></li>
-                    <li><a href="#">BEST SELLERS</a></li>
-                    <li><a href="#">DEALS</a></li>
-                    <li><a href="#">TESTERS</a></li>
-                    <li><a href="#">OUR OUTLETS</a></li>
-                    <li><a href="#">BLOGS</a></li>
-                </ul>
-            </div>
-        </nav>
-    </header>
-
-    <div class="quiz-wrapper">
-        <div class="quiz-container">
-
-            <header class="quiz-header">
-                <h1>Scent Personality Quiz</h1>
-
-                <div class="progress-bar-container">
-                    <div class="progress-bar-line">
-                        <span class="progress-indicator answered" id="progress-1"></span>
-                        <span class="progress-indicator" id="progress-2"></span>
-                        <span class="progress-indicator" id="progress-3"></span>
-                    </div>
-                    <p class="progress-text" id="progress-text">Progress: Q1/3</p>
-                </div>
-            </header>
-
-            <form class="quiz-form">
-                <section class="question-block active" id="q1">
-                    <h2 class="question-title">1. Which Is Your Favorite Season?</h2>
-                    <div class="options-grid season-options">
-
-                        <label class="option-card season-card">
-                            <input type="radio" name="season" value="spring" data-question="1">
-                            <img src="../../Images/spring.png" alt="Spring Icon">
-                            <span>Spring (Bahar)</span>
-                        </label>
-
-                        <label class="option-card season-card">
-                            <input type="radio" name="season" value="summer" data-question="1">
-                            <img src="../../Images/summer.png" alt="Summer Icon">
-                            <span>Summer (Garmi)</span>
-                        </label>
-
-                        <label class="option-card season-card">
-                            <input type="radio" name="season" value="winter" data-question="1">
-                            <img src="../../Images/winter.png" alt="Winter Icon">
-                            <span>Winter (Sardi)</span>
-                        </label>
-
-                        <label class="option-card season-card">
-                            <input type="radio" name="season" value="autumn" data-question="1">
-                            <img src="../../Images/autumn.png" alt="Autumn Icon">
-                            <span>Autumn (Khizan)</span>
-                        </label>
-
-                    </div>
-                </section>
-
-                <section class="question-block" id="q2">
-                    <h2 class="question-title">2. How Do You Start Your Day?</h2>
-                    <div class="options-grid lifestyle-options">
-
-                        <label class="option-card image-card">
-                            <input type="radio" name="start_day" value="calm" data-question="2">
-                            <img src="../../Images/Yoga.png" alt="Yoga/Meditation">
-                            <p>Energetic and Calm</p>
-                        </label>
-
-                        <label class="option-card image-card">
-                            <input type="radio" name="start_day" value="active" data-question="2">
-                            <img src="../../Images/Jogging.png" alt="Running/Jogging">
-                            <p>Active and Focused</p>
-                        </label>
-
-                        <label class="option-card image-card">
-                            <input type="radio" name="start_day" value="refined" data-question="2">
-                            <img src="../../Images/Office.png" alt="Confident Professional">
-                            <p>Confident and Refined</p>
-                        </label>
-
-                        <label class="option-card image-card">
-                            <input type="radio" name="start_day" value="cozy" data-question="2">
-                            <img src="../../Images/BED.png" alt="Relaxed Morning in Bed">
-                            <p>Relaxed and Cozy</p>
-                        </label>
-
-                    </div>
-                </section>
-
-                <section class="question-block" id="q3">
-                    <h2 class="question-title">3. How Is Your Personality Best Described?</h2>
-                    <div class="options-grid personality-options">
-
-                        <label class="option-card personality-card">
-                            <input type="radio" name="personality" value="fresh" data-question="3">
-                            <span>Fresh and Clean</span>
-                        </label>
-
-                        <label class="option-card personality-card">
-                            <input type="radio" name="personality" value="cheerful" data-question="3">
-                            <span>Cheerful and Confident</span>
-                        </label>
-
-                        <label class="option-card personality-card">
-                            <input type="radio" name="personality" value="mysterious" data-question="3">
-                            <span>Mysterious and Bold</span>
-                        </label>
-
-                        <label class="option-card personality-card">
-                            <input type="radio" name="personality" value="warm" data-question="3">
-                            <span>Warm and Inviting</span>
-                        </label>
-
-                    </div>
-                </section>
-
-                <div class="quiz-navigation">
-                    <button type="submit" class="next-button" disabled>Next Question</button>
-                </div>
-
-            </form>
-
-            <section id="result-section">
-                <h2>Your Scent Personality Match!</h2>
-                <p id="result-description">Based on your choices, we recommend a fragrance that perfectly matches your
-                    unique style.</p>
-
-                <div class="perfume-suggestion">
-                    <img id="perfume-image" src="https://placehold.co/150x150/f7a01d/333333?text=Perfume"
-                        alt="Suggested Perfume">
-                    <h3 id="perfume-title">Recommended Fragrance Title</h3>
-                    <p id="perfume-notes">Fresh citrus notes with a warm, woody base.</p>
-                    <a id="perfume-link" href="#" target="_blank">View Product</a>
-                </div>
-            </section>
-        </div>
+  <!-- ===================== HEADER ===================== -->
+  <header id="fixed-header" class="fixed-header">
+    <div class="announcement-bar">
+      <span>🎁 Free Delivery on Orders Above Rs.2,500 &nbsp;|&nbsp; 7 Days Easy Return Policy</span>
+      <div class="social-icons-desktop">
+        <a href="https://www.facebook.com/" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.instagram.com/" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.youtube.com/" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+      </div>
     </div>
-    <footer class="main-footer">
-        <div class="footer-content">
-            <div class="footer-logo">
-                <img src="../../Images/Logo remove.png" alt="Scentify Fragrances Logo">
-            </div>
-
-            <div class="footer-section">
-                <h3>Quick Links</h3>
-                <ul>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">FAQ's</a></li>
-                    <li><a href="#">Returns</a></li>
-                    <li><a href="#">Terms & Conditions</a></li>
-                    <li><a href="#">Privacy Policy</a></li>
-                </ul>
-            </div>
-
-            <div class="footer-section">
-                <h3>Contact Info</h3>
-                <ul>
-                    <li><i class="fas fa-envelope"></i> Support@Scentify.Com</li>
-                    <li><i class="fas fa-phone"></i> +92 300 1234567</li>
-                    <li><i class="fas fa-map-marker-alt"></i> Lahore, Pakistan</li>
-                </ul>
-                <h3>Follow Us</h3>
-                <div class="social-links">
-                    <a href="#"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
-                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                </div>
-            </div>
-
-            <div class="footer-section">
-                <h3>Customer Services</h3>
-                <ul>
-                    <li><a href="#">About Us</a></li>
-                    <li><a href="#">Scentify Media Page</a></li>
-                    <li><a href="#">Terms Of Service</a></li>
-                    <li><a href="#">Refund And Exchange Policy</a></li>
-                </ul>
-            </div>
-            <div class="footer-section address-section">
-                <h3>Address</h3>
-                <p>Shop G-179, Musk Al Mahal, Opp Rex Centre, Next To Meezan Bank, Panorama Centre, Saddar, Karachi.</p>
-            </div>
+    <div class="header-main">
+      <div class="header-container">
+        <div class="search-bar-desktop">
+          <div class="search-input-wrapper">
+            <label for="desktop-search" class="sr-only">Search products</label>
+            <input id="desktop-search" type="text" placeholder="Search products...">
+            <i class="fas fa-search" aria-hidden="true"></i>
+          </div>
         </div>
-        <div class="footer-bottom">
-            <p>&copy; 2025 Scentify</p>
+        <div class="logo-wrapper">
+          <a href="index.html" class="logo-text" aria-label="Scentify Home">Scent<span>ify</span></a>
         </div>
-    </footer>
+        <div class="header-icons">
+          <button class="search-mobile-icon" aria-label="Open Search"><i class="fas fa-search"></i></button>
+          <a href="loginpage.html" class="icon-link" aria-label="My Account">
+            <i class="fas fa-user"></i><span class="icon-label">Account</span>
+          </a>
+          <a href="checkoutpage.html" class="icon-link cart-icon-wrapper" aria-label="Shopping Cart">
+            <i class="fas fa-shopping-cart"></i><span class="icon-label">Cart</span>
+            <span class="cart-count" aria-live="polite">0</span>
+          </a>
+          <button class="menu-mobile-icon" aria-label="Open Menu"><i class="fas fa-bars"></i></button>
+        </div>
+      </div>
+    </div>
+    <nav class="nav-links-desktop" aria-label="Main Navigation">
+      <div class="nav-container">
+        <ul class="nav-list">
+          <li><a href="index.html">HOME</a></li>
+          <li><a href="productlisting.html" class="dropdown-link">SHOP <i class="fas fa-chevron-down"></i></a></li>
+          <li><a href="#">BEST SELLERS</a></li>
+          <li><a href="#">DEALS</a></li>
+          <li><a href="#">TESTERS</a></li>
+          <li><a href="#">OUR OUTLETS</a></li>
+          <li><a href="#">BLOGS</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <!-- ===================== MAIN ===================== -->
+  <main class="quiz-page-main">
+
+    <!-- QUIZ HERO -->
+    <section class="quiz-page-hero" aria-label="Quiz Introduction">
+      <p class="hero-eyebrow">2-Minute Quiz</p>
+      <h1>Find Your <span>Signature Scent</span></h1>
+      <p class="quiz-hero-sub">Answer a few questions and we'll match you with the perfect attar from our collection.</p>
+    </section>
+
+    <!-- QUIZ CONTAINER -->
+    <div class="quiz-container" id="quizContainer">
+
+      <!-- PROGRESS BAR -->
+      <div class="quiz-progress-wrapper" aria-label="Quiz progress">
+        <div class="quiz-progress-bar">
+          <div class="quiz-progress-fill" id="progressFill" style="width: 0%"></div>
+        </div>
+        <span class="quiz-progress-label" id="progressLabel">Question 1 of 5</span>
+      </div>
+
+      <!-- QUESTION 1 -->
+      <div class="quiz-step active" id="step1" role="group" aria-labelledby="q1-label">
+        <p class="quiz-question-label" id="q1-label">01 / 05</p>
+        <h2 class="quiz-question">What's your gender?</h2>
+        <div class="quiz-options-grid">
+          <button class="quiz-option" data-q="1" data-value="male">
+            <i class="fas fa-mars quiz-option-icon" aria-hidden="true"></i>
+            <span>Male</span>
+          </button>
+          <button class="quiz-option" data-q="1" data-value="female">
+            <i class="fas fa-venus quiz-option-icon" aria-hidden="true"></i>
+            <span>Female</span>
+          </button>
+          <button class="quiz-option" data-q="1" data-value="unisex">
+            <i class="fas fa-genderless quiz-option-icon" aria-hidden="true"></i>
+            <span>Prefer Unisex</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- QUESTION 2 -->
+      <div class="quiz-step" id="step2" role="group" aria-labelledby="q2-label">
+        <p class="quiz-question-label" id="q2-label">02 / 05</p>
+        <h2 class="quiz-question">What kind of scent do you prefer?</h2>
+        <div class="quiz-options-grid">
+          <button class="quiz-option" data-q="2" data-value="woody">
+            <i class="fas fa-tree quiz-option-icon" aria-hidden="true"></i>
+            <span>Woody &amp; Earthy</span>
+          </button>
+          <button class="quiz-option" data-q="2" data-value="floral">
+            <i class="fas fa-spa quiz-option-icon" aria-hidden="true"></i>
+            <span>Floral &amp; Fresh</span>
+          </button>
+          <button class="quiz-option" data-q="2" data-value="musky">
+            <i class="fas fa-wind quiz-option-icon" aria-hidden="true"></i>
+            <span>Musky &amp; Oriental</span>
+          </button>
+          <button class="quiz-option" data-q="2" data-value="citrus">
+            <i class="fas fa-lemon quiz-option-icon" aria-hidden="true"></i>
+            <span>Citrus &amp; Light</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- QUESTION 3 -->
+      <div class="quiz-step" id="step3" role="group" aria-labelledby="q3-label">
+        <p class="quiz-question-label" id="q3-label">03 / 05</p>
+        <h2 class="quiz-question">When do you plan to wear it?</h2>
+        <div class="quiz-options-grid">
+          <button class="quiz-option" data-q="3" data-value="daily">
+            <i class="fas fa-sun quiz-option-icon" aria-hidden="true"></i>
+            <span>Daily / Office</span>
+          </button>
+          <button class="quiz-option" data-q="3" data-value="evening">
+            <i class="fas fa-moon quiz-option-icon" aria-hidden="true"></i>
+            <span>Evenings &amp; Events</span>
+          </button>
+          <button class="quiz-option" data-q="3" data-value="special">
+            <i class="fas fa-star quiz-option-icon" aria-hidden="true"></i>
+            <span>Special Occasions</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- QUESTION 4 -->
+      <div class="quiz-step" id="step4" role="group" aria-labelledby="q4-label">
+        <p class="quiz-question-label" id="q4-label">04 / 05</p>
+        <h2 class="quiz-question">How long do you want the scent to last?</h2>
+        <div class="quiz-options-grid">
+          <button class="quiz-option" data-q="4" data-value="2-4">
+            <i class="fas fa-hourglass-start quiz-option-icon" aria-hidden="true"></i>
+            <span>2–4 Hours</span>
+          </button>
+          <button class="quiz-option" data-q="4" data-value="4-6">
+            <i class="fas fa-hourglass-half quiz-option-icon" aria-hidden="true"></i>
+            <span>4–6 Hours</span>
+          </button>
+          <button class="quiz-option" data-q="4" data-value="8+">
+            <i class="fas fa-hourglass-end quiz-option-icon" aria-hidden="true"></i>
+            <span>8+ Hours</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- QUESTION 5 -->
+      <div class="quiz-step" id="step5" role="group" aria-labelledby="q5-label">
+        <p class="quiz-question-label" id="q5-label">05 / 05</p>
+        <h2 class="quiz-question">What's your budget per bottle?</h2>
+        <div class="quiz-options-grid">
+          <button class="quiz-option" data-q="5" data-value="under1000">
+            <i class="fas fa-tag quiz-option-icon" aria-hidden="true"></i>
+            <span>Under Rs. 1,000</span>
+          </button>
+          <button class="quiz-option" data-q="5" data-value="1000-2000">
+            <i class="fas fa-tags quiz-option-icon" aria-hidden="true"></i>
+            <span>Rs. 1,000 – 2,000</span>
+          </button>
+          <button class="quiz-option" data-q="5" data-value="2000+">
+            <i class="fas fa-gem quiz-option-icon" aria-hidden="true"></i>
+            <span>Rs. 2,000+</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- RESULT -->
+      <div class="quiz-step" id="stepResult" aria-live="polite">
+        <div class="quiz-result-card">
+          <div class="quiz-result-icon"><i class="fas fa-check-circle" aria-hidden="true"></i></div>
+          <h2 class="quiz-result-title">Your Perfect Match</h2>
+          <p class="quiz-result-subtitle" id="resultSubtitle">Based on your answers, we recommend:</p>
+          <div class="quiz-result-product" id="resultProduct">
+            <img id="resultImage" src="../Images/Sultan A1.webp" alt="Recommended product">
+            <div class="quiz-result-product-info">
+              <h3 id="resultName">Sultan E Ameer</h3>
+              <p id="resultDesc">A bold, long-lasting woody-musky attar — perfect for your style.</p>
+              <p class="quiz-result-price" id="resultPrice">Rs. 2,199</p>
+              <a id="resultLink" href="Sultan_Ameer_Detail_Page.html" class="btn-primary">View Product</a>
+            </div>
+          </div>
+          <button class="quiz-retake-btn" id="retakeBtn">
+            <i class="fas fa-redo" aria-hidden="true"></i> Retake Quiz
+          </button>
+        </div>
+      </div>
+
+      <!-- NAV BUTTONS -->
+      <div class="quiz-nav" id="quizNav">
+        <button class="quiz-back-btn" id="backBtn" style="display:none;">
+          <i class="fas fa-arrow-left" aria-hidden="true"></i> Back
+        </button>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="main-footer" aria-label="Site Footer">
+    <div class="footer-content">
+      <div class="footer-brand">
+        <a href="index.html" class="logo-text footer-logo-text" aria-label="Scentify Home">Scent<span>ify</span></a>
+        <p class="footer-tagline">Wear the Unseen.</p>
+        <div class="social-links">
+          <a href="https://www.facebook.com/" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://www.instagram.com/" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="https://twitter.com/" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+          <a href="https://www.linkedin.com/" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+      </div>
+      <div class="footer-section">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="ourstory.html">About Us</a></li>
+          <li><a href="#">FAQ's</a></li>
+          <li><a href="#">Returns</a></li>
+          <li><a href="#">Terms &amp; Conditions</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>Customer Services</h3>
+        <ul>
+          <li><a href="#">Scentify Media Page</a></li>
+          <li><a href="#">Terms Of Service</a></li>
+          <li><a href="#">Refund &amp; Exchange Policy</a></li>
+          <li><a href="#">Track My Order</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>Contact Info</h3>
+        <ul>
+          <li><i class="fas fa-envelope"></i> Support@Scentify.com</li>
+          <li><i class="fas fa-phone"></i> +92 300 1234567</li>
+          <li><i class="fas fa-map-marker-alt"></i> Lahore, Pakistan</li>
+        </ul>
+      </div>
+      <div class="footer-section address-section">
+        <h3>Our Outlet</h3>
+        <p>Shop G-179, Musk Al Mahal, Opp Rex Centre,<br>Next To Meezan Bank, Panorama Centre,<br>Saddar, Karachi.</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Scentify. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="../JS/script.js" defer></script>
+  <script src="../JS/quiz.js" defer></script>
 </body>
 
 </html>

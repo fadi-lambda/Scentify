@@ -1,91 +1,75 @@
-// productlisting.js (Product List Page ka Logic)
+// productpage.js — Product Listing Page
 
 document.addEventListener('DOMContentLoaded', () => {
-    
-    // 🛑 ZAROORI: 'localStorage.clear();' line yahan maujood nahi honi chahiye.
 
-    // 1. Sticky Header Functionality (Agar aap use kar rahe hain)
-    const header = document.getElementById('mainHeader');
-    const stickyPoint = header ? header.offsetHeight : 0; 
-    
-    window.addEventListener('scroll', () => {
-        if (header) {
-            if (window.scrollY > stickyPoint) {
-                header.classList.add('sticky-header');
-            } else {
-                header.classList.remove('sticky-header');
-            }
-        }
-    });
+  let cart = JSON.parse(localStorage.getItem('scentifyCart')) || [];
+  const cartItemCountEl = document.getElementById('cartItemCount');
+  const cartNotificationEl = document.getElementById('cartNotification');
+  const sortSelect = document.getElementById('sortSelect');
+  const productGrid = document.getElementById('productGrid');
 
-    // --- 2. Cart Management Functions ---
+  // --- Cart Count ---
+  function updateCartCount() {
+    const total = cart.reduce((sum, item) => sum + item.quantity, 0);
+    if (cartItemCountEl) cartItemCountEl.textContent = total;
+  }
 
-    // Cart data ko Local Storage se load karte hain
-    let cart = JSON.parse(localStorage.getItem('scentifyCart')) || [];
-    
-    const cartItemCountEl = document.getElementById('cartItemCount');
-    const cartNotificationEl = document.getElementById('cartNotification');
+  function saveCart() {
+    localStorage.setItem('scentifyCart', JSON.stringify(cart));
+  }
 
-    function updateCartCount() {
-        const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
-        if (cartItemCountEl) {
-            cartItemCountEl.textContent = totalItems;
-        }
+  function showNotification(name) {
+    if (!cartNotificationEl) return;
+    cartNotificationEl.textContent = `${name} added to cart!`;
+    cartNotificationEl.style.display = 'block';
+    setTimeout(() => { cartNotificationEl.style.display = 'none'; }, 2000);
+  }
+
+  function addItemToCart(id, name, price) {
+    if (!id || !name || !price) return;
+    const idx = cart.findIndex(item => item.id === id);
+    if (idx > -1) {
+      cart[idx].quantity += 1;
+    } else {
+      cart.push({ id, name, price: parseFloat(price), quantity: 1 });
     }
-
-    function saveCart() {
-        // ✅ Data 'scentifyCart' key se save ho raha hai, jo checkout page use karega.
-        localStorage.setItem('scentifyCart', JSON.stringify(cart)); 
-    }
-
-    function showNotification(productName) {
-        if (cartNotificationEl) {
-            cartNotificationEl.textContent = `${productName} added to cart!`;
-            cartNotificationEl.classList.add('show');
-            
-            setTimeout(() => {
-                cartNotificationEl.classList.remove('show');
-            }, 2000); 
-        }
-    }
-    
-    // Main Cart Logic: Item ko cart mein add karna
-    function addItemToCart(id, name, price) {
-        if (!id || !name || !price) {
-            console.error("Missing product data for cart:", {id, name, price});
-            return; 
-        }
-
-        const existingItemIndex = cart.findIndex(item => item.id === id);
-        const parsedPrice = parseFloat(price);
-
-        if (existingItemIndex > -1) {
-            cart[existingItemIndex].quantity += 1;
-        } else {
-            cart.push({
-                id: id,
-                name: name,
-                price: parsedPrice, 
-                quantity: 1
-            });
-        }
-
-        saveCart(); 
-        updateCartCount(); 
-        showNotification(name); 
-    }
-
-    // Click Event Listener: Har 'Add' button par event lagana
-    document.querySelectorAll('.add-btn').forEach(button => {
-        button.addEventListener('click', (e) => {
-            const id = button.getAttribute('data-id');
-            const name = button.getAttribute('data-name');
-            const price = button.getAttribute('data-price');
-
-            addItemToCart(id, name, price);
-        });
-    });
-
-    // Page load hone par shuruwaati cart count update karna
+    saveCart();
     updateCartCount();
+    showNotification(name);
+  }
+
+  // --- Add to Cart Buttons (updated selector) ---
+  document.querySelectorAll('.pl-add-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      addItemToCart(
+        btn.getAttribute('data-id'),
+        btn.getAttribute('data-name'),
+        btn.getAttribute('data-price')
+      );
+    });
+  });
+
+  // --- Sort ---
+  if (sortSelect && productGrid) {
+    sortSelect.addEventListener('change', () => {
+      const cards = Array.from(productGrid.querySelectorAll('.pl-product-card'));
+      const val = sortSelect.value;
+
+      cards.sort((a, b) => {
+        const priceA = parseFloat(a.dataset.price);
+        const priceB = parseFloat(b.dataset.price);
+        const ratingA = parseFloat(a.dataset.rating);
+        const ratingB = parseFloat(b.dataset.rating);
+
+        if (val === 'price-asc') return priceA - priceB;
+        if (val === 'price-desc') return priceB - priceA;
+        if (val === 'rating') return ratingB - ratingA;
+        return 0; // default/featured
+      });
+
+      cards.forEach(card => productGrid.appendChild(card));
+    });
+  }
+
+  updateCartCount();
 });

@@ -1,139 +1,115 @@
+// quiz.js — Fragrance Finder Quiz
 
 document.addEventListener('DOMContentLoaded', () => {
-    const quizForm = document.querySelector('.quiz-form');
-    const questionBlocks = document.querySelectorAll('.question-block');
-    const nextButton = document.querySelector('.next-button');
-    const resultSection = document.getElementById('result-section');
-    const progressIndicators = document.querySelectorAll('.progress-indicator');
-    const progressText = document.getElementById('progress-text');
-    const totalQuestions = questionBlocks.length;
-    let currentQuestionIndex = 0;
-    let answers = {};
 
-    function updateProgress() {
-        const answeredCount = Object.keys(answers).length;
-        progressIndicators.forEach((indicator, index) => {
-            if (index < answeredCount) {
-                indicator.classList.add('answered');
-            } else {
-                indicator.classList.remove('answered');
-            }
-        });
-        if (resultSection.style.display === 'block') {
-            progressText.textContent = `Progress: Q${totalQuestions}/${totalQuestions}`;
+  const TOTAL_STEPS = 5;
+  let currentStep = 1;
+  const answers = {};
+
+  const progressFill  = document.getElementById('progressFill');
+  const progressLabel = document.getElementById('progressLabel');
+  const backBtn       = document.getElementById('backBtn');
+  const retakeBtn     = document.getElementById('retakeBtn');
+
+  // Product recommendations keyed by budget then scent
+  const recommendations = {
+    'under1000': {
+      default:  { name: 'White Oudh', desc: 'A classy, dense fragrance at an accessible price point.', price: 'Rs. 999', img: '../Images/White Oud.webp', link: '#' }
+    },
+    '1000-2000': {
+      woody:    { name: 'Black & Silver Oud', desc: 'Bold woody-musky attar — long lasting and masculine.', price: 'Rs. 1,899', img: '../Images/Black & Silver Oud.webp', link: '#' },
+      musky:    { name: 'Black & Silver Platinum', desc: 'Rich musky oriental — an upgrade for your collection.', price: 'Rs. 1,499', img: '../Images/Black & Silver Platinum.webp', link: '#' },
+      default:  { name: 'Black & Silver Platinum', desc: 'A versatile concentrated attar for everyday luxury.', price: 'Rs. 1,499', img: '../Images/Black & Silver Platinum.webp', link: '#' }
+    },
+    '2000+': {
+      default:  { name: 'Sultan E Ameer', desc: 'Floral-woody with musk and citrus — the signature of royalty.', price: 'Rs. 2,199', img: '../Images/Sultan A1.webp', link: 'Sultan_Ameer_Detail_Page.html' }
+    }
+  };
+
+  function getRecommendation() {
+    const budget = answers[5] || '1000-2000';
+    const scent  = answers[2] || 'default';
+    const group  = recommendations[budget] || recommendations['1000-2000'];
+    return group[scent] || group['default'];
+  }
+
+  function updateProgress() {
+    const pct = ((currentStep - 1) / TOTAL_STEPS) * 100;
+    if (progressFill)  progressFill.style.width = pct + '%';
+    if (progressLabel) progressLabel.textContent = `Question ${currentStep} of ${TOTAL_STEPS}`;
+    if (backBtn) backBtn.style.display = currentStep > 1 ? 'inline-flex' : 'none';
+  }
+
+  function showStep(n) {
+    document.querySelectorAll('.quiz-step').forEach(s => s.classList.remove('active'));
+    const target = document.getElementById(n <= TOTAL_STEPS ? `step${n}` : 'stepResult');
+    if (target) target.classList.add('active');
+    currentStep = n;
+    updateProgress();
+  }
+
+  function showResult() {
+    if (progressFill)  progressFill.style.width = '100%';
+    if (progressLabel) progressLabel.textContent = 'Your result is ready!';
+    if (backBtn) backBtn.style.display = 'none';
+
+    const rec = getRecommendation();
+    const img  = document.getElementById('resultImage');
+    const name = document.getElementById('resultName');
+    const desc = document.getElementById('resultDesc');
+    const price= document.getElementById('resultPrice');
+    const link = document.getElementById('resultLink');
+
+    if (img)   { img.src = rec.img; img.alt = rec.name; }
+    if (name)  name.textContent  = rec.name;
+    if (desc)  desc.textContent  = rec.desc;
+    if (price) price.textContent = rec.price;
+    if (link)  link.href         = rec.link;
+
+    document.querySelectorAll('.quiz-step').forEach(s => s.classList.remove('active'));
+    const resultEl = document.getElementById('stepResult');
+    if (resultEl) resultEl.classList.add('active');
+  }
+
+  // Option click → record answer → auto-advance
+  document.querySelectorAll('.quiz-option').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const q = parseInt(btn.dataset.q);
+      const val = btn.dataset.value;
+
+      // Mark selected
+      document.querySelectorAll(`.quiz-option[data-q="${q}"]`).forEach(b => b.classList.remove('selected'));
+      btn.classList.add('selected');
+
+      answers[q] = val;
+
+      // Auto advance after short delay
+      setTimeout(() => {
+        if (q < TOTAL_STEPS) {
+          showStep(q + 1);
         } else {
-            progressText.textContent = `Progress: Q${currentQuestionIndex + 1}/${totalQuestions}`;
+          showResult();
         }
-        if (answeredCount === totalQuestions) {
-            nextButton.textContent = 'Suggest My Perfume';
-            nextButton.disabled = false;
-        } else {
-            nextButton.textContent = 'Next Question';
-        }
-    }
-
-    function showQuestion(index) {
-        questionBlocks.forEach(block => block.classList.remove('active'));
-        if (questionBlocks[index]) {
-            questionBlocks[index].classList.add('active');
-            currentQuestionIndex = index;
-            checkButtonState();
-        }
-        updateProgress();
-    }
-
-    function checkButtonState() {
-        const currentQuestionName = questionBlocks[currentQuestionIndex].querySelector('input[type="radio"]').name;
-        const isAnswered = document.querySelector(`input[name="${currentQuestionName}"]:checked`);
-
-        nextButton.disabled = !isAnswered;
-    }
-
-    const radioInputs = document.querySelectorAll('.quiz-form input[type="radio"]');
-
-    radioInputs.forEach(input => {
-        input.addEventListener('change', (event) => {
-            const questionName = event.target.name;
-            const card = event.target.closest('.option-card');
-            document.querySelectorAll(`input[name="${questionName}"]`).forEach(
-                radio => radio.closest('.option-card').classList.remove('selected')
-            );
-            if (event.target.checked) {
-                card.classList.add('selected');
-                answers[questionName] = event.target.value;
-                checkButtonState();
-                updateProgress();
-            }
-        });
+      }, 300);
     });
+  });
 
-    quizForm.addEventListener('submit', (event) => {
-        event.preventDefault();
-
-        const answeredCount = Object.keys(answers).length;
-
-        if (answeredCount < totalQuestions) {
-            showQuestion(currentQuestionIndex + 1);
-        } else if (answeredCount === totalQuestions) {
-            showResult();
-        }
+  // Back button
+  if (backBtn) {
+    backBtn.addEventListener('click', () => {
+      if (currentStep > 1) showStep(currentStep - 1);
     });
+  }
 
-    function showResult() {
-        progressIndicators.forEach(indicator => indicator.classList.add('answered'));
+  // Retake
+  if (retakeBtn) {
+    retakeBtn.addEventListener('click', () => {
+      Object.keys(answers).forEach(k => delete answers[k]);
+      document.querySelectorAll('.quiz-option').forEach(b => b.classList.remove('selected'));
+      showStep(1);
+    });
+  }
 
-        quizForm.style.display = 'none';
-        resultSection.style.display = 'block';
-
-        const season = answers['season'];
-        const startDay = answers['start_day'];
-        const personality = answers['personality'];
-
-        let title, description, image, link, notes;
-
-        title = "Scentify Signature Musk";
-        description = "You have a balanced and versatile personality. Try our signature fragrance: a classic musk with a hint of warm spice.";
-        image = "https://muskalmahalpakistan.com/cdn/shop/files/WhatsApp_Image_2025-09-05_at_5.32.56_PM.jpg?v=1759345056&width=1800";
-        link = "https://example.com/signature-musk";
-        notes = "Notes: Creamy Musk, Sandalwood, Cardamom.";
-
-        if ((season === 'spring' || season === 'summer') && startDay === 'active' && personality === 'fresh') {
-            title = "Aqua Citrus Wave";
-            description = "Your active and fresh personality calls for a light, invigorating scent. This fragrance is perfect for daily wear and warm weather.";
-            image = "https://muskalmahalpakistan.com/cdn/shop/files/Render_0033_Ameeraloud.jpg?v=1759345772&width=1800";
-            link = "https://example.com/aqua-citrus";
-            notes = "Notes: Zesty Lemon, Green Tea, Marine Accord.";
-        }
-
-        else if ((season === 'autumn' || season === 'winter') && startDay === 'refined' && personality === 'mysterious') {
-            title = "Oud Noir Elite";
-            description = "Bold, mysterious, and refined. You need a luxurious, long-lasting scent with depth. The perfect evening wear or signature scent.";
-            image = "https://muskalmahalpakistan.com/cdn/shop/files/Render_0008_platinum.jpg?v=1759344844&width=1800";
-            link = "https://example.com/oud-noir";
-            notes = "Notes: Aged Oud Wood, Smoky Incense, Patchouli.";
-        }
-        else if (season === 'winter' && startDay === 'cozy' && personality === 'warm') {
-            title = "Vanilla Spiced Comfort";
-            description = "Warm, inviting, and utterly cozy. This sweet, gourmand scent is like a warm blanket on a cold day. Ideal for relaxation and comfort.";
-            image = "https://muskalmahalpakistan.com/cdn/shop/files/Render_0036_WO.jpg?v=1759345102&width=1800";
-            link = "https://example.com/vanilla-spice";
-            notes = "Notes: Madagascar Vanilla, Cinnamon, Brown Sugar.";
-        }
-        else if (season === 'spring' && startDay === 'calm' && personality === 'cheerful') {
-            title = "Radiant Blossom Dream";
-            description = "Your cheerful and energetic spirit deserves a vibrant floral scent. Experience the bloom of spring all year round.";
-            image = "https://muskalmahalpakistan.com/cdn/shop/files/Render_0021_Engraved.jpg?v=1759346385&width=720";
-            link = "https://example.com/radiant-blossom";
-            notes = "Notes: White Florals, Pink Pepper, Cashmere Wood.";
-        }
-        document.getElementById('result-description').textContent = description;
-        document.getElementById('perfume-image').src = image;
-        document.getElementById('perfume-image').alt = title;
-        document.getElementById('perfume-title').textContent = title;
-        document.getElementById('perfume-link').href = link;
-        document.getElementById('perfume-notes').textContent = notes;
-
-        updateProgress();
-    }
-    showQuestion(0);
+  // Init
+  showStep(1);
 });
