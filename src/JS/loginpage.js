@@ -11,6 +11,25 @@ document.addEventListener('DOMContentLoaded', () => {
     const loginError = document.getElementById('loginError');
     const signupError = document.getElementById('signupError');
 
+    const passwordToggleButtons = document.querySelectorAll('[data-password-toggle]');
+
+    passwordToggleButtons.forEach((button) => {
+        button.addEventListener('click', () => {
+            const targetId = button.getAttribute('data-password-toggle');
+            const passwordInput = document.getElementById(targetId);
+
+            if (!passwordInput) {
+                return;
+            }
+
+            const isPasswordHidden = passwordInput.type === 'password';
+            passwordInput.type = isPasswordHidden ? 'text' : 'password';
+            button.setAttribute('aria-pressed', String(isPasswordHidden));
+            button.setAttribute('aria-label', isPasswordHidden ? 'Hide password' : 'Show password');
+            button.setAttribute('data-visible', String(isPasswordHidden));
+        });
+    });
+
     // --- 2. URL Hash Checking (Main functionality) ---
 
     // Yeh function check karta hai ki URL mein '#signup' hai ya nahi
