@@ -2753,3 +2753,26 @@ ul {
     line-height: 1.7;
     margin: 0;
 }
+
+.product-not-found {
+    text-align: center;
+    padding: 100px 24px;
+}
+
+.product-not-found i {
+    font-size: 3rem;
+    color: #dc2626;
+    margin-bottom: 16px;
+}
+
+.product-not-found h1 {
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: var(--color-dark);
+    margin: 0 0 10px;
+}
+
+.product-not-found p {
+    color: #666;
+    margin: 0 0 28px;
+}
